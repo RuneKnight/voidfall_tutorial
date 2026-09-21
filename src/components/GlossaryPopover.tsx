@@ -42,11 +42,20 @@ export function GlossaryPopover({
   // Calculate viewport boundaries
   const padding = 16;
   const popoverWidth = 320;
+  const popoverEstimatedHeight = 220;
+  const viewportWidth = typeof window !== 'undefined' ? window.innerWidth : 1000;
+  const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 800;
+
   const left = Math.min(
     Math.max(padding, position.x - popoverWidth / 2),
-    typeof window !== 'undefined' ? window.innerWidth - popoverWidth - padding : 100
+    viewportWidth - popoverWidth - padding
   );
-  const top = position.y + 12;
+
+  // If opening at bottom overflows viewport, position above the target point
+  const isNearBottom = position.y + popoverEstimatedHeight > viewportHeight;
+  const top = isNearBottom
+    ? Math.max(padding, position.y - popoverEstimatedHeight - 12)
+    : position.y + 12;
 
   return (
     <div
