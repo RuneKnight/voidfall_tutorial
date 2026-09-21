@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
 const PROGRESS_STORAGE_KEY = 'voidfall_tutorial_progress';
 
@@ -13,27 +13,38 @@ export interface ProgressData {
 const DEFAULT_PROGRESS: ProgressData = {
   currentStepIndex: 0,
   completedSteps: [],
-  lastAccessedAt: Date.now(),
+  lastAccessedAt: 0,
 };
 
+function getSnapshot(): string {
+  if (typeof window === 'undefined') return JSON.stringify(DEFAULT_PROGRESS);
+  return localStorage.getItem(PROGRESS_STORAGE_KEY) || JSON.stringify(DEFAULT_PROGRESS);
+}
+
+function getServerSnapshot(): string {
+  return JSON.stringify(DEFAULT_PROGRESS);
+}
+
+function subscribe(callback: () => void) {
+  if (typeof window === 'undefined') return () => {};
+  window.addEventListener('storage', callback);
+  return () => window.removeEventListener('storage', callback);
+}
+
 export function useTutorialProgress(totalSteps: number = 58) {
-  const [progress, setProgress] = useState<ProgressData>(() => {
-    if (typeof window === 'undefined') return DEFAULT_PROGRESS;
-    try {
-      const stored = localStorage.getItem(PROGRESS_STORAGE_KEY);
-      if (stored) {
-        return JSON.parse(stored);
-      }
-    } catch (e) {
-      console.warn('Failed to read tutorial progress from localStorage:', e);
-    }
-    return DEFAULT_PROGRESS;
-  });
+  const storeString = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  let progress: ProgressData = DEFAULT_PROGRESS;
+  try {
+    progress = JSON.parse(storeString);
+  } catch (e) {
+    console.warn('Failed to parse tutorial progress:', e);
+  }
 
   const saveProgress = (newProgress: ProgressData) => {
-    setProgress(newProgress);
     try {
       localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(newProgress));
+      window.dispatchEvent(new Event('storage'));
     } catch (e) {
       console.warn('Failed to save tutorial progress to localStorage:', e);
     }
@@ -41,7 +52,7 @@ export function useTutorialProgress(totalSteps: number = 58) {
 
   const goToStep = (index: number) => {
     if (index < 0 || index >= totalSteps) return;
-    const completed = new Set(progress.completedSteps);
+    const completed = new Set(progress.completedSteps || []);
     if (progress.currentStepIndex < index) {
       completed.add(progress.currentStepIndex);
     }
@@ -66,13 +77,13 @@ export function useTutorialProgress(totalSteps: number = 58) {
   };
 
   return {
-    currentStepIndex: progress.currentStepIndex,
-    completedSteps: progress.completedSteps,
+    currentStepIndex: progress.currentStepIndex || 0,
+    completedSteps: progress.completedSteps || [],
     isLoaded: true,
     goToStep,
     nextStep,
     prevStep,
     resetProgress,
-    completionPercentage: Math.round((progress.completedSteps.length / totalSteps) * 100),
+    completionPercentage: Math.round(((progress.completedSteps || []).length / totalSteps) * 100),
   };
 }

@@ -938,5 +938,109 @@
         "term": "침공"
       }
     ]
+  },
+  "trade": {
+    "id": "trade",
+    "term": "무역",
+    "termEn": "Trade",
+    "definition": "무역 토큰을 소비하거나 무역 액션을 실행하여 자원을 확보하고 집중 카드의 3번째 행동을 활성화하는 메커니즘입니다.",
+    "related": [
+      {
+        "id": "trade_token",
+        "term": "Trade Token"
+      },
+      {
+        "id": "focus_card",
+        "term": "집중 카드"
+      }
+    ]
+  },
+  "corvette": {
+    "id": "corvette",
+    "term": "초계함",
+    "termEn": "Corvette",
+    "definition": "가장 기본이 되는 기동 함대입니다. 별도의 기술 연구 없이도 무료로 생산 및 전개할 수 있습니다.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "deploy",
+        "term": "Deploy"
+      }
+    ]
+  },
+  "destroyer": {
+    "id": "destroyer",
+    "term": "구축함",
+    "termEn": "Destroyer",
+    "definition": "높은 이니셔티브(선제 공격) 성능을 갖춘 정밀 공격형 함대입니다. 구축함 기술 연구 후 생산 가능합니다.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "initiative",
+        "term": "Initiative"
+      }
+    ]
+  },
+  "dreadnought": {
+    "id": "dreadnought",
+    "term": "드레드노트",
+    "termEn": "Dreadnought",
+    "definition": "강력한 화력과 높은 장갑 흡수 능력을 자랑하는 주력 중함선입니다. 드레드노트 기술 연구 후 생산 가능합니다.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "absorption",
+        "term": "흡수"
+      }
+    ]
+  },
+  "carrier": {
+    "id": "carrier",
+    "term": "항공모함",
+    "termEn": "Carrier",
+    "definition": "전투 접근 단계에서 초계함을 전개하거나 전투 중 지원을 제공하는 전략 함선입니다. 항공모함 기술 연구 후 생산 가능합니다.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "approach",
+        "term": "접근 단계"
+      },
+      {
+        "id": "corvette",
+        "term": "초계함"
+      }
+    ]
+  },
+  "evaluation_phase": {
+    "id": "evaluation_phase",
+    "term": "평가 단계",
+    "termEn": "Evaluation Phase",
+    "definition": "각 라운드 또는 사이클 종료 시 진행하는 정산 단계로, 유지비 지불, 의제 카드 및 은하 목표 점수 계산, 정지 작업 등을 실행합니다.",
+    "related": [
+      {
+        "id": "upkeep",
+        "term": "유지비"
+      },
+      {
+        "id": "agenda",
+        "term": "의제 카드"
+      },
+      {
+        "id": "influence",
+        "term": "영향력 (승점)"
+      }
+    ]
   }
 }

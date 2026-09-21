@@ -20,6 +20,14 @@ export function GlossaryModal({
 }: GlossaryModalProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [openTermKey, setOpenTermKey] = useState<string | null>(activeTermKey || null);
+  const [prevActiveTermKey, setPrevActiveTermKey] = useState<string | null | undefined>(activeTermKey);
+
+  if (activeTermKey !== prevActiveTermKey) {
+    setPrevActiveTermKey(activeTermKey);
+    if (activeTermKey) {
+      setOpenTermKey(activeTermKey);
+    }
+  }
 
   const termsList = useMemo(() => {
     return Object.values(glossary);
