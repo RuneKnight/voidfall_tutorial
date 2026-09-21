@@ -1,0 +1,896 @@
+{
+  "absorption": {
+    "id": "absorption",
+    "term": "Absorption",
+    "definition": "A defensive capability that cancels 1 point of Damage. There are two types: Approach Absorption (cancels Approach Damage) and Salvo Absorption (cancels Salvo Damage). The two types cannot cross -- Approach Absorption cannot cancel Salvo Damage and vice versa.",
+    "related": [
+      {
+        "id": "damage",
+        "term": "Damage"
+      },
+      {
+        "id": "combat",
+        "term": "Combat"
+      },
+      {
+        "id": "approach",
+        "term": "Approach"
+      },
+      {
+        "id": "salvo",
+        "term": "Salvo"
+      }
+    ]
+  },
+  "agenda": {
+    "id": "agenda",
+    "term": "Agenda",
+    "definition": "A card representing a strategic objective (4 types: Support, Might, Wealth, Dominance). Agendas are gained from the Agenda board, played during Selection alongside a matching Focus, and placed in Agenda slots during Clean-up. During Evaluation, Pure Agendas (without Corruption above them) score Influence.",
+    "related": [
+      {
+        "id": "corruption",
+        "term": "Corruption"
+      },
+      {
+        "id": "influence",
+        "term": "Influence"
+      },
+      {
+        "id": "focus_card",
+        "term": "Focus Card"
+      }
+    ]
+  },
+  "approach": {
+    "id": "approach",
+    "term": "Approach",
+    "definition": "The first step of Combat. The Defender&#039;s Sector Defenses and Starbases each deal 1 Damage to the Invader. Carriers may deploy Corvettes during this step. Approach Damage can only be cancelled by Approach Absorption.",
+    "related": [
+      {
+        "id": "combat",
+        "term": "Combat"
+      },
+      {
+        "id": "salvo",
+        "term": "Salvo"
+      },
+      {
+        "id": "sector_defense",
+        "term": "Sector Defense"
+      },
+      {
+        "id": "starbase",
+        "term": "Starbase"
+      },
+      {
+        "id": "damage",
+        "term": "Damage"
+      }
+    ]
+  },
+  "bounty_token": {
+    "id": "bounty_token",
+    "term": "Bounty Token",
+    "definition": "A token found in certain Voidborn sectors that provides a reward when you successfully invade and conquer that sector.",
+    "related": [
+      {
+        "id": "invade",
+        "term": "Invade"
+      },
+      {
+        "id": "sector",
+        "term": "Sector"
+      },
+      {
+        "id": "voidborn",
+        "term": "Voidborn"
+      }
+    ]
+  },
+  "catastrophe": {
+    "id": "catastrophe",
+    "term": "Catastrophe",
+    "definition": "A severe penalty token placed when Crisis cards are pushed off the right edge of the Crisis board. Each Catastrophe adds 20 to the Voidborn&#039;s final Influence total. Receiving a 4th Catastrophe token causes an immediate loss in cooperative/solo mode.",
+    "related": [
+      {
+        "id": "crisis",
+        "term": "Crisis"
+      },
+      {
+        "id": "influence",
+        "term": "Influence"
+      },
+      {
+        "id": "voidborn",
+        "term": "Voidborn"
+      }
+    ]
+  },
+  "civilization_track": {
+    "id": "civilization_track",
+    "term": "Civilization Track",
+    "definition": "One of 3 advancement tracks (Society, Statecraft, Economy) with 5 Tiers (0-4). Advancing on these tracks unlocks benefits unique to your Galactic House, increases your Improved Technology limit, and at Tier 4 allows building Safe Haven levels. Corrupted tracks can still advance but do not grant benefits.",
+    "related": [
+      {
+        "id": "tier",
+        "term": "Tier"
+      },
+      {
+        "id": "technology",
+        "term": "Technology"
+      },
+      {
+        "id": "safe_haven",
+        "term": "Safe Haven"
+      },
+      {
+        "id": "corruption",
+        "term": "Corruption"
+      }
+    ]
+  },
+  "combat": {
+    "id": "combat",
+    "term": "Combat",
+    "definition": "A deterministic (no dice) confrontation between an Invader and a Defender. Combat proceeds through an Approach step followed by repeated Salvo steps until one side is eliminated. The outcome determines sector control.",
+    "related": [
+      {
+        "id": "approach",
+        "term": "Approach"
+      },
+      {
+        "id": "salvo",
+        "term": "Salvo"
+      },
+      {
+        "id": "initiative",
+        "term": "Initiative"
+      },
+      {
+        "id": "damage",
+        "term": "Damage"
+      },
+      {
+        "id": "absorption",
+        "term": "Absorption"
+      }
+    ]
+  },
+  "corrupted": {
+    "id": "corrupted",
+    "term": "Corrupted",
+    "definition": "A sector, Agenda, or Civilization track that has a Corruption marker on it. Corrupted elements are restricted: sectors cannot change Population, Agendas cannot score, and tracks do not grant benefits.",
+    "related": [
+      {
+        "id": "corruption",
+        "term": "Corruption"
+      },
+      {
+        "id": "pure",
+        "term": "Pure"
+      }
+    ]
+  },
+  "corruption": {
+    "id": "corruption",
+    "term": "Corruption",
+    "definition": "A negative marker that can be placed on sectors, Agenda slots, or Civilization track markers. Corrupted sectors cannot change their Population. Corrupted Agendas cannot score Influence. Corrupted Civilization tracks do not grant their benefits. Corruption can be moved or removed by various game effects.",
+    "related": [
+      {
+        "id": "sector",
+        "term": "Sector"
+      },
+      {
+        "id": "agenda",
+        "term": "Agenda"
+      },
+      {
+        "id": "civilization_track",
+        "term": "Civilization Track"
+      },
+      {
+        "id": "pure",
+        "term": "Pure"
+      },
+      {
+        "id": "corrupted",
+        "term": "Corrupted"
+      }
+    ]
+  },
+  "crisis": {
+    "id": "crisis",
+    "term": "Crisis",
+    "definition": "A threat card drawn in cooperative/solo mode during Step 0 of your turn. Crises appear on the Crisis board in Military or Economic rows and must be dealt with or they push existing cards toward Catastrophe. Crisis cards can be resolved by spending resources or completing military objectives.",
+    "related": [
+      {
+        "id": "catastrophe",
+        "term": "Catastrophe"
+      },
+      {
+        "id": "harbinger",
+        "term": "Harbinger"
+      }
+    ]
+  },
+  "damage": {
+    "id": "damage",
+    "term": "Damage",
+    "definition": "The result of a successful strike in combat. Each point of Damage forces the opponent to recall 1 Fleet Power from the combat sector back to their Active area. Damage can be cancelled by matching Absorption (Approach Absorption for Approach Damage, Salvo Absorption for Salvo Damage).",
+    "related": [
+      {
+        "id": "combat",
+        "term": "Combat"
+      },
+      {
+        "id": "recall",
+        "term": "Recall"
+      },
+      {
+        "id": "absorption",
+        "term": "Absorption"
+      }
+    ]
+  },
+  "deploy": {
+    "id": "deploy",
+    "term": "Deploy",
+    "definition": "The act of moving Fleet Power from your Active area to a sector on the map. You choose a Fleet type, pay its resource cost (Corvettes are free), and place the cubes on a Fleet token in the target sector. You need the matching Technology for non-Corvette Fleet types.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "Fleet Power"
+      },
+      {
+        "id": "fleet_token",
+        "term": "Fleet Token"
+      },
+      {
+        "id": "recall",
+        "term": "Recall"
+      },
+      {
+        "id": "technology",
+        "term": "Technology"
+      }
+    ]
+  },
+  "fleet_power": {
+    "id": "fleet_power",
+    "term": "Fleet Power",
+    "definition": "Your military strength, represented by 14 cubes per player. Fleet Power exists in three states: Inactive (on your House mat, unavailable), Active (on your House mat, ready to deploy), and Deployed (on the galaxy map in sectors or on Fleet tokens).",
+    "related": [
+      {
+        "id": "fleet_token",
+        "term": "Fleet Token"
+      },
+      {
+        "id": "deploy",
+        "term": "Deploy"
+      },
+      {
+        "id": "recall",
+        "term": "Recall"
+      }
+    ]
+  },
+  "fleet_token": {
+    "id": "fleet_token",
+    "term": "Fleet Token",
+    "definition": "A token placed on a sector that holds 1 to 3 Fleet Power cubes. Each sector can have a maximum of 2 Fleet tokens. Fleet tokens specify the Fleet type (Corvette, Sentry, Destroyer, Dreadnought, or Carrier) which determines combat capabilities.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "Fleet Power"
+      },
+      {
+        "id": "deploy",
+        "term": "Deploy"
+      },
+      {
+        "id": "combat",
+        "term": "Combat"
+      }
+    ]
+  },
+  "focus_card": {
+    "id": "focus_card",
+    "term": "Focus Card",
+    "definition": "A card played from your hand during the Selection step of your turn. Each Focus card has 3 actions (Top, Middle, Bottom), each with a cost and effects. You normally take 2 of the 3 actions, or all 3 if you flip a Trade token. Green lines between effects mean you take all shown; red lines mean you choose one.",
+    "related": [
+      {
+        "id": "trade_token",
+        "term": "Trade Token"
+      }
+    ]
+  },
+  "galactic_event": {
+    "id": "galactic_event",
+    "term": "Galactic Event",
+    "definition": "A card revealed during the Preparation phase of each Cycle. It shows instructions that affect the game state, determines the number of Focus rounds in the Cycle, and provides Galactic Objectives that are evaluated during the Evaluation phase.",
+    "related": [
+      {
+        "id": "influence",
+        "term": "Influence"
+      }
+    ]
+  },
+  "glory_token": {
+    "id": "glory_token",
+    "term": "Glory Token",
+    "definition": "A token with a value of 1-5 gained from invading sectors. When you invade a non-player sector, you gain Influence equal to the sum of all your Glory token values. You can hold a maximum of 4 Glory tokens. Tokens can be upgraded by discarding one and gaining one of higher value.",
+    "related": [
+      {
+        "id": "invade",
+        "term": "Invade"
+      },
+      {
+        "id": "influence",
+        "term": "Influence"
+      }
+    ]
+  },
+  "guild": {
+    "id": "guild",
+    "term": "Guild",
+    "definition": "One of 5 types of organizations that can be built in a sector (Farmers, Engineers, Miners, Bankers, Scientists). Each Guild adds its sector&#039;s Population to the matching resource&#039;s Production Level (Farmers = Food, Engineers = Energy, Miners = Materials, Bankers = Credits, Scientists = Science).",
+    "related": [
+      {
+        "id": "population",
+        "term": "Population"
+      },
+      {
+        "id": "production_level",
+        "term": "Production Level"
+      },
+      {
+        "id": "installation",
+        "term": "Installation"
+      },
+      {
+        "id": "sector",
+        "term": "Sector"
+      }
+    ]
+  },
+  "harbinger": {
+    "id": "harbinger",
+    "term": "Harbinger",
+    "definition": "A token that blocks spaces on the Crisis board rows. Each Harbinger remaining on the map at end of game adds 10 to the Voidborn&#039;s final Influence total in cooperative/solo mode.",
+    "related": [
+      {
+        "id": "crisis",
+        "term": "Crisis"
+      },
+      {
+        "id": "voidborn",
+        "term": "Voidborn"
+      },
+      {
+        "id": "influence",
+        "term": "Influence"
+      }
+    ]
+  },
+  "home_sector": {
+    "id": "home_sector",
+    "term": "Home Sector",
+    "definition": "Your starting sector that is always under your control and can never be invaded. It provides a safe base of operations for your Galactic House.",
+    "related": [
+      {
+        "id": "sector",
+        "term": "Sector"
+      }
+    ]
+  },
+  "influence": {
+    "id": "influence",
+    "term": "Influence",
+    "definition": "The victory currency of Voidfall. Tracked on your Influence board with dials. You gain Influence from Agendas, Galactic Events, invading sectors, Glory tokens, civilization tracks, overproduction bonuses, and other effects. You lose Influence from unpaid Upkeep and certain penalties.",
+    "related": [
+      {
+        "id": "agenda",
+        "term": "Agenda"
+      },
+      {
+        "id": "glory_token",
+        "term": "Glory Token"
+      },
+      {
+        "id": "overproduction",
+        "term": "Overproduction"
+      },
+      {
+        "id": "upkeep",
+        "term": "Upkeep"
+      }
+    ]
+  },
+  "initiative": {
+    "id": "initiative",
+    "term": "Initiative",
+    "definition": "A combat value calculated each Salvo step. Base Initiative equals 1 per Fleet Power in the combat sector, modified by Fleet types and Technologies. The side with higher Initiative strikes first in each Salvo.",
+    "related": [
+      {
+        "id": "salvo",
+        "term": "Salvo"
+      },
+      {
+        "id": "combat",
+        "term": "Combat"
+      },
+      {
+        "id": "fleet_power",
+        "term": "Fleet Power"
+      }
+    ]
+  },
+  "installation": {
+    "id": "installation",
+    "term": "Installation",
+    "definition": "One of 3 types of structures that can be built in a sector: Sector Defenses, Shipyards, and Starbases. Installations provide military infrastructure. Each sector has space for up to 3 Installations.",
+    "related": [
+      {
+        "id": "sector_defense",
+        "term": "Sector Defense"
+      },
+      {
+        "id": "shipyard",
+        "term": "Shipyard"
+      },
+      {
+        "id": "starbase",
+        "term": "Starbase"
+      },
+      {
+        "id": "sector",
+        "term": "Sector"
+      }
+    ]
+  },
+  "invade": {
+    "id": "invade",
+    "term": "Invade",
+    "definition": "An action where you select a sector you do not control, move adjacent Fleet Power into it, and then resolve Combat. This is how you expand your territory and push back the Voidborn.",
+    "related": [
+      {
+        "id": "combat",
+        "term": "Combat"
+      },
+      {
+        "id": "fleet_power",
+        "term": "Fleet Power"
+      },
+      {
+        "id": "sector",
+        "term": "Sector"
+      }
+    ]
+  },
+  "overproduction": {
+    "id": "overproduction",
+    "term": "Overproduction",
+    "definition": "When producing a resource would push your stockpile above the cap of 15, the excess resources are discarded and you gain 3 Influence per instance of overproduction. This is a powerful late-game scoring strategy.",
+    "related": [
+      {
+        "id": "stockpile",
+        "term": "Stockpile"
+      },
+      {
+        "id": "influence",
+        "term": "Influence"
+      },
+      {
+        "id": "production_yield",
+        "term": "Production Yield"
+      }
+    ]
+  },
+  "population": {
+    "id": "population",
+    "term": "Population",
+    "definition": "A value (1-6) shown by a die on most sectors. Population drives resource production: each Guild adds its sector&#039;s Population to that resource&#039;s Production Level. Pure Population can be changed; Corrupted Population cannot.",
+    "related": [
+      {
+        "id": "guild",
+        "term": "Guild"
+      },
+      {
+        "id": "production_level",
+        "term": "Production Level"
+      },
+      {
+        "id": "sector",
+        "term": "Sector"
+      },
+      {
+        "id": "corruption",
+        "term": "Corruption"
+      }
+    ]
+  },
+  "production_level": {
+    "id": "production_level",
+    "term": "Production Level",
+    "definition": "The sum of all Population values from sectors where you have the matching Guild type. For example, if you have Farmers Guilds in two sectors with Population 3 and 4, your Food Production Level is 7. Maximum Production Level is 13 per resource.",
+    "related": [
+      {
+        "id": "production_yield",
+        "term": "Production Yield"
+      },
+      {
+        "id": "guild",
+        "term": "Guild"
+      },
+      {
+        "id": "population",
+        "term": "Population"
+      }
+    ]
+  },
+  "production_yield": {
+    "id": "production_yield",
+    "term": "Production Yield",
+    "definition": "The actual amount of a resource you gain when you produce it. Production Yield is determined by your Production Level but increases at a different rate (Credits increase more slowly). The Yield is read from the Production track on your House mat.",
+    "related": [
+      {
+        "id": "production_level",
+        "term": "Production Level"
+      },
+      {
+        "id": "stockpile",
+        "term": "Stockpile"
+      }
+    ]
+  },
+  "pure": {
+    "id": "pure",
+    "term": "Pure",
+    "definition": "A sector, Agenda, or Civilization track that does not have a Corruption marker on it. Pure sectors can change Population. Pure Agendas can score Influence during Evaluation.",
+    "related": [
+      {
+        "id": "corruption",
+        "term": "Corruption"
+      },
+      {
+        "id": "corrupted",
+        "term": "Corrupted"
+      }
+    ]
+  },
+  "recall": {
+    "id": "recall",
+    "term": "Recall",
+    "definition": "The act of moving Fleet Power from a sector on the map back to your Active area on your House mat. This happens when taking damage in combat, during Clean-up if exceeding fleet limits, or voluntarily.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "Fleet Power"
+      },
+      {
+        "id": "deploy",
+        "term": "Deploy"
+      },
+      {
+        "id": "damage",
+        "term": "Damage"
+      }
+    ]
+  },
+  "reclaim_token": {
+    "id": "reclaim_token",
+    "term": "Reclaim Token",
+    "definition": "A token found in certain sectors that provides a benefit when you successfully invade and take control of the sector, representing resources or advantages reclaimed from the Voidborn.",
+    "related": [
+      {
+        "id": "invade",
+        "term": "Invade"
+      },
+      {
+        "id": "sector",
+        "term": "Sector"
+      }
+    ]
+  },
+  "regroup": {
+    "id": "regroup",
+    "term": "Regroup",
+    "definition": "A movement action that allows you to make up to 5 moves of your Fleet Power between adjacent sectors you control. You cannot move the last Fleet Power out of a non-Home sector, as that would abandon it.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "Fleet Power"
+      },
+      {
+        "id": "sector",
+        "term": "Sector"
+      },
+      {
+        "id": "invade",
+        "term": "Invade"
+      }
+    ]
+  },
+  "safe_haven": {
+    "id": "safe_haven",
+    "term": "Safe Haven",
+    "definition": "A level built on a Pure sector that has Population 6 and 3 Guilds, and only during Evaluation when you have reached Tier 4 on the matching Civilization track. In cooperative/solo mode, each incomplete Safe Haven adds 20 to the Voidborn&#039;s final Influence.",
+    "related": [
+      {
+        "id": "civilization_track",
+        "term": "Civilization Track"
+      },
+      {
+        "id": "tier",
+        "term": "Tier"
+      },
+      {
+        "id": "population",
+        "term": "Population"
+      },
+      {
+        "id": "guild",
+        "term": "Guild"
+      }
+    ]
+  },
+  "salvo": {
+    "id": "salvo",
+    "term": "Salvo",
+    "definition": "A combat step that repeats until one side is eliminated. Each Salvo: calculate Initiative for both sides, the higher Initiative deals 1 Damage first, then the lower Initiative responds with 1 Damage (if they still have Initiative). Equal Initiative means simultaneous Damage.",
+    "related": [
+      {
+        "id": "combat",
+        "term": "Combat"
+      },
+      {
+        "id": "initiative",
+        "term": "Initiative"
+      },
+      {
+        "id": "damage",
+        "term": "Damage"
+      },
+      {
+        "id": "absorption",
+        "term": "Absorption"
+      }
+    ]
+  },
+  "sector": {
+    "id": "sector",
+    "term": "Sector",
+    "definition": "A hexagonal tile on the galaxy map. Sectors can be Voidborn-controlled (containing Voidborn Fleets and Corruption), player-controlled (containing player Fleet Power), or your Home sector. Each sector has spaces for up to 3 Guilds and 3 Installations, and most have a Population value.",
+    "related": [
+      {
+        "id": "home_sector",
+        "term": "Home Sector"
+      },
+      {
+        "id": "voidborn",
+        "term": "Voidborn"
+      },
+      {
+        "id": "guild",
+        "term": "Guild"
+      },
+      {
+        "id": "installation",
+        "term": "Installation"
+      },
+      {
+        "id": "population",
+        "term": "Population"
+      }
+    ]
+  },
+  "sector_defense": {
+    "id": "sector_defense",
+    "term": "Sector Defense",
+    "definition": "An Installation type that deals 1 Approach Damage to any Invader attacking the sector it occupies. Sector Defenses are your first line of defense in combat.",
+    "related": [
+      {
+        "id": "installation",
+        "term": "Installation"
+      },
+      {
+        "id": "approach",
+        "term": "Approach"
+      },
+      {
+        "id": "damage",
+        "term": "Damage"
+      },
+      {
+        "id": "combat",
+        "term": "Combat"
+      }
+    ]
+  },
+  "shipyard": {
+    "id": "shipyard",
+    "term": "Shipyard",
+    "definition": "An Installation type that allows you to deploy Fleet Power to the sector it occupies. Without a Shipyard (or Starbase), you cannot place new Fleet tokens in a sector.",
+    "related": [
+      {
+        "id": "installation",
+        "term": "Installation"
+      },
+      {
+        "id": "deploy",
+        "term": "Deploy"
+      },
+      {
+        "id": "fleet_power",
+        "term": "Fleet Power"
+      },
+      {
+        "id": "starbase",
+        "term": "Starbase"
+      }
+    ]
+  },
+  "skirmish": {
+    "id": "skirmish",
+    "term": "Skirmish",
+    "definition": "A Voidborn attack that occurs during the Evaluation phase (competitive mode) or as part of War Alert Crisis resolution (cooperative/solo mode). The Voidborn attempts to invade or damage player-controlled sectors.",
+    "related": [
+      {
+        "id": "voidborn",
+        "term": "Voidborn"
+      },
+      {
+        "id": "combat",
+        "term": "Combat"
+      }
+    ]
+  },
+  "starbase": {
+    "id": "starbase",
+    "term": "Starbase",
+    "definition": "An advanced Installation type that requires Technology to build. A Starbase functions as both a Shipyard (allowing Fleet deployment) and a Sector Defense (dealing 1 Approach Damage). It combines the benefits of both other Installation types.",
+    "related": [
+      {
+        "id": "installation",
+        "term": "Installation"
+      },
+      {
+        "id": "shipyard",
+        "term": "Shipyard"
+      },
+      {
+        "id": "sector_defense",
+        "term": "Sector Defense"
+      },
+      {
+        "id": "technology",
+        "term": "Technology"
+      }
+    ]
+  },
+  "stockpile": {
+    "id": "stockpile",
+    "term": "Stockpile",
+    "definition": "Your current supply of a resource. Each resource has a maximum stockpile cap of 15. If production would cause your stockpile to exceed 15, the excess is lost but you gain 3 Influence per instance of overproduction.",
+    "related": [
+      {
+        "id": "overproduction",
+        "term": "Overproduction"
+      },
+      {
+        "id": "production_yield",
+        "term": "Production Yield"
+      }
+    ]
+  },
+  "technology": {
+    "id": "technology",
+    "term": "Technology",
+    "definition": "A card that provides an Influence bonus, an immediate effect, and a permanent ability. There are 84 Technology cards (56 Basic, 28 Improved). You have a limit of 5 Technologies (can increase to 6). Improved Technologies require owning the matching Basic version, availability on the Galactic board, and sufficient Improved Tech limit from your Civilization tracks.",
+    "related": [
+      {
+        "id": "civilization_track",
+        "term": "Civilization Track"
+      },
+      {
+        "id": "tier",
+        "term": "Tier"
+      },
+      {
+        "id": "influence",
+        "term": "Influence"
+      }
+    ]
+  },
+  "tier": {
+    "id": "tier",
+    "term": "Tier",
+    "definition": "A level on a Civilization track, ranging from 0 to 4. Entering Tiers 1 and 2 unlocks Improved Technology slots. Entering Tiers 3 and 4 requires deactivating Fleet Power first. Tier 4 is needed for building Safe Haven levels.",
+    "related": [
+      {
+        "id": "civilization_track",
+        "term": "Civilization Track"
+      },
+      {
+        "id": "technology",
+        "term": "Technology"
+      },
+      {
+        "id": "fleet_power",
+        "term": "Fleet Power"
+      }
+    ]
+  },
+  "trade_token": {
+    "id": "trade_token",
+    "term": "Trade Token",
+    "definition": "A token gained from the Galactic board and Trade bonuses. Its primary use is to flip during the Selection step to take all 3 Focus actions instead of just 2. Trade tokens are stored on Agenda slots or returned to the Galactic board during Clean-up. You cannot flip a token the same turn you gain it.",
+    "related": [
+      {
+        "id": "focus_card",
+        "term": "Focus Card"
+      },
+      {
+        "id": "agenda",
+        "term": "Agenda"
+      }
+    ]
+  },
+  "upkeep": {
+    "id": "upkeep",
+    "term": "Upkeep",
+    "definition": "A cost paid during the Evaluation phase. Your total Upkeep is determined by icons on your Agendas and occupied sector spaces. Pay each Upkeep with Food, or with a combination of Materials and Energy. Each unpaid Upkeep costs you 3 Influence.",
+    "related": [
+      {
+        "id": "influence",
+        "term": "Influence"
+      },
+      {
+        "id": "agenda",
+        "term": "Agenda"
+      },
+      {
+        "id": "sector",
+        "term": "Sector"
+      }
+    ]
+  },
+  "voidborn": {
+    "id": "voidborn",
+    "term": "Voidborn",
+    "definition": "The existential threat spreading across the galaxy. Voidborn sectors contain Voidborn Fleets and Corruption. In competitive mode, the Voidborn strikes back during Evaluation. In cooperative/solo mode, the Voidborn is the primary antagonist you must collectively defeat.",
+    "related": [
+      {
+        "id": "sector",
+        "term": "Sector"
+      },
+      {
+        "id": "corruption",
+        "term": "Corruption"
+      },
+      {
+        "id": "skirmish",
+        "term": "Skirmish"
+      }
+    ]
+  },
+  "voidstorm": {
+    "id": "voidstorm",
+    "term": "Voidstorm",
+    "definition": "A token placed between sectors that breaks adjacency. Sectors separated by a Voidstorm are not considered adjacent for movement, Regroup, or Invasion purposes.",
+    "related": [
+      {
+        "id": "sector",
+        "term": "Sector"
+      },
+      {
+        "id": "regroup",
+        "term": "Regroup"
+      },
+      {
+        "id": "invade",
+        "term": "Invade"
+      }
+    ]
+  }
+}

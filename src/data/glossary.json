@@ -1,0 +1,942 @@
+{
+  "absorption": {
+    "id": "absorption",
+    "term": "흡수",
+    "termEn": "Absorption",
+    "definition": "피해 1점을 상쇄하는 방어 능력입니다. 접근 흡수(접근 피해 상쇄)와 일제사격 흡수(일제사격 피해 상쇄)의 두 종류가 있으며, 서로 교차 적용되지 않습니다.",
+    "related": [
+      {
+        "id": "damage",
+        "term": "피해"
+      },
+      {
+        "id": "combat",
+        "term": "전투"
+      },
+      {
+        "id": "approach",
+        "term": "접근 단계"
+      },
+      {
+        "id": "salvo",
+        "term": "일제사격 단계"
+      }
+    ]
+  },
+  "agenda": {
+    "id": "agenda",
+    "term": "의제 카드",
+    "termEn": "Agenda",
+    "definition": "전략적 목표를 나타내는 카드입니다 (지원, 무력, 번영, 지배 4가지 유형). 선택 단계에서 일치하는 집중 카드와 함께 사용하며, 평가 단계에서 부패가 없는 순수한 의제 카드는 영향력(승점)을 제공합니다.",
+    "related": [
+      {
+        "id": "corruption",
+        "term": "부패"
+      },
+      {
+        "id": "influence",
+        "term": "영향력 (승점)"
+      },
+      {
+        "id": "focus_card",
+        "term": "집중 카드"
+      }
+    ]
+  },
+  "approach": {
+    "id": "approach",
+    "term": "접근 단계",
+    "termEn": "Approach",
+    "definition": "전투의 첫 번째 단계입니다. 방어자의 섹터 방어 시설과 성간 기지가 침공자에게 각각 1의 피해를 입힙니다. 항공모함은 이 단계에서 초계함을 전개할 수 있습니다. 접근 피해는 오직 접근 흡수로만 막을 수 있습니다.",
+    "related": [
+      {
+        "id": "combat",
+        "term": "전투"
+      },
+      {
+        "id": "salvo",
+        "term": "일제사격 단계"
+      },
+      {
+        "id": "sector_defense",
+        "term": "섹터 방어 시설"
+      },
+      {
+        "id": "starbase",
+        "term": "성간 기지"
+      },
+      {
+        "id": "damage",
+        "term": "피해"
+      }
+    ]
+  },
+  "bounty_token": {
+    "id": "bounty_token",
+    "term": "현상금 토큰",
+    "termEn": "Bounty Token",
+    "definition": "특정 공허태생 섹터에 놓여 있는 토큰으로, 해당 섹터를 성공적으로 침공하고 정복했을 때 보상을 제공합니다.",
+    "related": [
+      {
+        "id": "invade",
+        "term": "침공"
+      },
+      {
+        "id": "sector",
+        "term": "섹터"
+      },
+      {
+        "id": "voidborn",
+        "term": "공허태생"
+      }
+    ]
+  },
+  "catastrophe": {
+    "id": "catastrophe",
+    "term": "대재앙 토큰",
+    "termEn": "Catastrophe",
+    "definition": "위기 카드가 위기 보드의 오른쪽 끝을 넘어 밀려났을 때 놓이는 가혹한 페널티 토큰입니다. 각 토큰마다 공허태생의 최종 점수에 20점을 추가하며, 협동/솔로 모드에서 4번째 토큰을 받으면 즉시 패배합니다.",
+    "related": [
+      {
+        "id": "crisis",
+        "term": "위기 카드"
+      },
+      {
+        "id": "influence",
+        "term": "영향력 (승점)"
+      },
+      {
+        "id": "voidborn",
+        "term": "공허태생"
+      }
+    ]
+  },
+  "civilization_track": {
+    "id": "civilization_track",
+    "term": "문명 트랙",
+    "termEn": "Civilization Track",
+    "definition": "3가지 문명 발전 트랙(사회, 국정, 경제)으로 0~4단계로 구성됩니다. 트랙을 전진하면 가문 고유 혜택을 해금하고, 개량 기술 보유 한도를 늘려줍니다. 부패한 트랙은 발전은 가능하지만 혜택을 주지 않습니다.",
+    "related": [
+      {
+        "id": "tier",
+        "term": "Tier"
+      },
+      {
+        "id": "technology",
+        "term": "기술 카드"
+      },
+      {
+        "id": "safe_haven",
+        "term": "Safe Haven"
+      },
+      {
+        "id": "corruption",
+        "term": "부패"
+      }
+    ]
+  },
+  "combat": {
+    "id": "combat",
+    "term": "전투",
+    "termEn": "Combat",
+    "definition": "함대가 적대적인 섹터(공허태생 또는 다른 플레이어)에 진입했을 때 발생하는 결정론적(주사위 없음) 충돌입니다. 접근 단계와 하나 이상의 일제사격 단계로 구성됩니다.",
+    "related": [
+      {
+        "id": "approach",
+        "term": "접근 단계"
+      },
+      {
+        "id": "salvo",
+        "term": "일제사격 단계"
+      },
+      {
+        "id": "initiative",
+        "term": "Initiative"
+      },
+      {
+        "id": "damage",
+        "term": "피해"
+      },
+      {
+        "id": "absorption",
+        "term": "흡수"
+      }
+    ]
+  },
+  "corrupted": {
+    "id": "corrupted",
+    "term": "Corrupted",
+    "termEn": "Corrupted",
+    "definition": "A sector, Agenda, or Civilization track that has a Corruption marker on it. Corrupted elements are restricted: sectors cannot change Population, Agendas cannot score, and tracks do not grant benefits.",
+    "related": [
+      {
+        "id": "corruption",
+        "term": "부패"
+      },
+      {
+        "id": "pure",
+        "term": "Pure"
+      }
+    ]
+  },
+  "corruption": {
+    "id": "corruption",
+    "term": "부패",
+    "termEn": "Corruption",
+    "definition": "은하계를 집어삼키는 공허태생의 암흑 물질입니다. 개인판의 문명 트랙, 의제 슬롯, 섹터 등에 놓여 기능을 마비시키며, 게임 종료 시 제거되지 않은 부패는 큰 감점을 초래합니다.",
+    "related": [
+      {
+        "id": "sector",
+        "term": "섹터"
+      },
+      {
+        "id": "agenda",
+        "term": "의제 카드"
+      },
+      {
+        "id": "civilization_track",
+        "term": "문명 트랙"
+      },
+      {
+        "id": "pure",
+        "term": "Pure"
+      },
+      {
+        "id": "corrupted",
+        "term": "Corrupted"
+      }
+    ]
+  },
+  "crisis": {
+    "id": "crisis",
+    "term": "위기 카드",
+    "termEn": "Crisis",
+    "definition": "협동 및 솔로 모드에서 매 라운드 은하계에 발생하는 위험한 사건들입니다. 해결하지 못하고 방치하면 대재앙 토큰을 발생시킵니다.",
+    "related": [
+      {
+        "id": "catastrophe",
+        "term": "대재앙 토큰"
+      },
+      {
+        "id": "harbinger",
+        "term": "Harbinger"
+      }
+    ]
+  },
+  "damage": {
+    "id": "damage",
+    "term": "피해",
+    "termEn": "Damage",
+    "definition": "전투 중 가해지는 타격으로 함대 전투력을 감소시킵니다. 초과된 피해는 섹터 방어 시설이나 시설물을 파괴합니다.",
+    "related": [
+      {
+        "id": "combat",
+        "term": "전투"
+      },
+      {
+        "id": "recall",
+        "term": "Recall"
+      },
+      {
+        "id": "absorption",
+        "term": "흡수"
+      }
+    ]
+  },
+  "deploy": {
+    "id": "deploy",
+    "term": "Deploy",
+    "termEn": "Deploy",
+    "definition": "The act of moving Fleet Power from your Active area to a sector on the map. You choose a Fleet type, pay its resource cost (Corvettes are free), and place the cubes on a Fleet token in the target sector. You need the matching Technology for non-Corvette Fleet types.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "fleet_token",
+        "term": "Fleet Token"
+      },
+      {
+        "id": "recall",
+        "term": "Recall"
+      },
+      {
+        "id": "technology",
+        "term": "기술 카드"
+      }
+    ]
+  },
+  "fleet_power": {
+    "id": "fleet_power",
+    "term": "함대 전투력",
+    "termEn": "Fleet Power",
+    "definition": "함선 주사위의 눈금으로 표현되는 군사력입니다. 피해를 입으면 주사위 눈금이 줄어들며, 0이 되면 격침됩니다.",
+    "related": [
+      {
+        "id": "fleet_token",
+        "term": "Fleet Token"
+      },
+      {
+        "id": "deploy",
+        "term": "Deploy"
+      },
+      {
+        "id": "recall",
+        "term": "Recall"
+      }
+    ]
+  },
+  "fleet_token": {
+    "id": "fleet_token",
+    "term": "Fleet Token",
+    "termEn": "Fleet Token",
+    "definition": "A token placed on a sector that holds 1 to 3 Fleet Power cubes. Each sector can have a maximum of 2 Fleet tokens. Fleet tokens specify the Fleet type (Corvette, Sentry, Destroyer, Dreadnought, or Carrier) which determines combat capabilities.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "deploy",
+        "term": "Deploy"
+      },
+      {
+        "id": "combat",
+        "term": "전투"
+      }
+    ]
+  },
+  "focus_card": {
+    "id": "focus_card",
+    "term": "집중 카드",
+    "termEn": "Focus Card",
+    "definition": "각 라운드 플레이어가 사용할 행동을 선택하는 핵심 카드(9장)입니다. 각 카드에는 3개의 행동이 적혀 있으며, 이 중 최대 2개(또는 무역 토큰으로 3개)를 실행합니다.",
+    "related": [
+      {
+        "id": "trade_token",
+        "term": "Trade Token"
+      }
+    ]
+  },
+  "galactic_event": {
+    "id": "galactic_event",
+    "term": "Galactic Event",
+    "termEn": "Galactic Event",
+    "definition": "A card revealed during the Preparation phase of each Cycle. It shows instructions that affect the game state, determines the number of Focus rounds in the Cycle, and provides Galactic Objectives that are evaluated during the Evaluation phase.",
+    "related": [
+      {
+        "id": "influence",
+        "term": "영향력 (승점)"
+      }
+    ]
+  },
+  "glory_token": {
+    "id": "glory_token",
+    "term": "Glory Token",
+    "termEn": "Glory Token",
+    "definition": "A token with a value of 1-5 gained from invading sectors. When you invade a non-player sector, you gain Influence equal to the sum of all your Glory token values. You can hold a maximum of 4 Glory tokens. Tokens can be upgraded by discarding one and gaining one of higher value.",
+    "related": [
+      {
+        "id": "invade",
+        "term": "침공"
+      },
+      {
+        "id": "influence",
+        "term": "영향력 (승점)"
+      }
+    ]
+  },
+  "guild": {
+    "id": "guild",
+    "term": "길드",
+    "termEn": "Guild",
+    "definition": "섹터에 건설할 수 있는 5가지 생산 시설(농업, 에너지, 광업, 과학, 금융)입니다. 각 길드는 해당하는 자원의 생산량을 늘려줍니다.",
+    "related": [
+      {
+        "id": "population",
+        "term": "인구"
+      },
+      {
+        "id": "production_level",
+        "term": "Production Level"
+      },
+      {
+        "id": "installation",
+        "term": "시설물"
+      },
+      {
+        "id": "sector",
+        "term": "섹터"
+      }
+    ]
+  },
+  "harbinger": {
+    "id": "harbinger",
+    "term": "Harbinger",
+    "termEn": "Harbinger",
+    "definition": "A token that blocks spaces on the Crisis board rows. Each Harbinger remaining on the map at end of game adds 10 to the Voidborn&#039;s final Influence total in cooperative/solo mode.",
+    "related": [
+      {
+        "id": "crisis",
+        "term": "위기 카드"
+      },
+      {
+        "id": "voidborn",
+        "term": "공허태생"
+      },
+      {
+        "id": "influence",
+        "term": "영향력 (승점)"
+      }
+    ]
+  },
+  "home_sector": {
+    "id": "home_sector",
+    "term": "Home Sector",
+    "termEn": "Home Sector",
+    "definition": "Your starting sector that is always under your control and can never be invaded. It provides a safe base of operations for your Galactic House.",
+    "related": [
+      {
+        "id": "sector",
+        "term": "섹터"
+      }
+    ]
+  },
+  "influence": {
+    "id": "influence",
+    "term": "영향력 (승점)",
+    "termEn": "Influence",
+    "definition": "보이드폴에서 승리를 결정짓는 최종 승점 화폐입니다. 게임 내 다양한 업적, 섹터 정복, 의제 달성을 통해 획득합니다.",
+    "related": [
+      {
+        "id": "agenda",
+        "term": "의제 카드"
+      },
+      {
+        "id": "glory_token",
+        "term": "Glory Token"
+      },
+      {
+        "id": "overproduction",
+        "term": "초과 생산 보너스"
+      },
+      {
+        "id": "upkeep",
+        "term": "유지비"
+      }
+    ]
+  },
+  "initiative": {
+    "id": "initiative",
+    "term": "Initiative",
+    "termEn": "Initiative",
+    "definition": "A combat value calculated each Salvo step. Base Initiative equals 1 per Fleet Power in the combat sector, modified by Fleet types and Technologies. The side with higher Initiative strikes first in each Salvo.",
+    "related": [
+      {
+        "id": "salvo",
+        "term": "일제사격 단계"
+      },
+      {
+        "id": "combat",
+        "term": "전투"
+      },
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      }
+    ]
+  },
+  "installation": {
+    "id": "installation",
+    "term": "시설물",
+    "termEn": "Installation",
+    "definition": "섹터에 건설되는 고정 자산으로 성간 기지, 섹터 방어 시설, 우주 조선소, 길드 등이 포함됩니다.",
+    "related": [
+      {
+        "id": "sector_defense",
+        "term": "섹터 방어 시설"
+      },
+      {
+        "id": "shipyard",
+        "term": "우주 조선소"
+      },
+      {
+        "id": "starbase",
+        "term": "성간 기지"
+      },
+      {
+        "id": "sector",
+        "term": "섹터"
+      }
+    ]
+  },
+  "invade": {
+    "id": "invade",
+    "term": "침공",
+    "termEn": "Invade",
+    "definition": "이동력을 사용하여 적대 세력(공허태생 또는 다른 플레이어)이 있는 섹터로 함대를 진입시켜 전투를 개시하는 행동입니다.",
+    "related": [
+      {
+        "id": "combat",
+        "term": "전투"
+      },
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "sector",
+        "term": "섹터"
+      }
+    ]
+  },
+  "overproduction": {
+    "id": "overproduction",
+    "term": "초과 생산 보너스",
+    "termEn": "Overproduction",
+    "definition": "자원 트랙의 최대치(20)를 초과하여 자원을 생산할 때, 초과분 2당 즉시 영향력 1점을 획득하는 보너스 규칙입니다.",
+    "related": [
+      {
+        "id": "stockpile",
+        "term": "Stockpile"
+      },
+      {
+        "id": "influence",
+        "term": "영향력 (승점)"
+      },
+      {
+        "id": "production_yield",
+        "term": "Production Yield"
+      }
+    ]
+  },
+  "population": {
+    "id": "population",
+    "term": "인구",
+    "termEn": "Population",
+    "definition": "섹터의 생산력과 발전 한도를 결정하는 주사위로 표시됩니다. 길드를 건설하려면 적절한 인구가 필요합니다.",
+    "related": [
+      {
+        "id": "guild",
+        "term": "길드"
+      },
+      {
+        "id": "production_level",
+        "term": "Production Level"
+      },
+      {
+        "id": "sector",
+        "term": "섹터"
+      },
+      {
+        "id": "corruption",
+        "term": "부패"
+      }
+    ]
+  },
+  "production_level": {
+    "id": "production_level",
+    "term": "Production Level",
+    "termEn": "Production Level",
+    "definition": "The sum of all Population values from sectors where you have the matching Guild type. For example, if you have Farmers Guilds in two sectors with Population 3 and 4, your Food Production Level is 7. Maximum Production Level is 13 per resource.",
+    "related": [
+      {
+        "id": "production_yield",
+        "term": "Production Yield"
+      },
+      {
+        "id": "guild",
+        "term": "길드"
+      },
+      {
+        "id": "population",
+        "term": "인구"
+      }
+    ]
+  },
+  "production_yield": {
+    "id": "production_yield",
+    "term": "Production Yield",
+    "termEn": "Production Yield",
+    "definition": "The actual amount of a resource you gain when you produce it. Production Yield is determined by your Production Level but increases at a different rate (Credits increase more slowly). The Yield is read from the Production track on your House mat.",
+    "related": [
+      {
+        "id": "production_level",
+        "term": "Production Level"
+      },
+      {
+        "id": "stockpile",
+        "term": "Stockpile"
+      }
+    ]
+  },
+  "pure": {
+    "id": "pure",
+    "term": "Pure",
+    "termEn": "Pure",
+    "definition": "A sector, Agenda, or Civilization track that does not have a Corruption marker on it. Pure sectors can change Population. Pure Agendas can score Influence during Evaluation.",
+    "related": [
+      {
+        "id": "corruption",
+        "term": "부패"
+      },
+      {
+        "id": "corrupted",
+        "term": "Corrupted"
+      }
+    ]
+  },
+  "recall": {
+    "id": "recall",
+    "term": "Recall",
+    "termEn": "Recall",
+    "definition": "The act of moving Fleet Power from a sector on the map back to your Active area on your House mat. This happens when taking damage in combat, during Clean-up if exceeding fleet limits, or voluntarily.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "deploy",
+        "term": "Deploy"
+      },
+      {
+        "id": "damage",
+        "term": "피해"
+      }
+    ]
+  },
+  "reclaim_token": {
+    "id": "reclaim_token",
+    "term": "Reclaim Token",
+    "termEn": "Reclaim Token",
+    "definition": "A token found in certain sectors that provides a benefit when you successfully invade and take control of the sector, representing resources or advantages reclaimed from the Voidborn.",
+    "related": [
+      {
+        "id": "invade",
+        "term": "침공"
+      },
+      {
+        "id": "sector",
+        "term": "섹터"
+      }
+    ]
+  },
+  "regroup": {
+    "id": "regroup",
+    "term": "재정비 이동",
+    "termEn": "Regroup",
+    "definition": "전투 없이 안전하게 자신의 섹터들 사이에서 함대 전투력을 재배치하는 평화적 이동입니다.",
+    "related": [
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "sector",
+        "term": "섹터"
+      },
+      {
+        "id": "invade",
+        "term": "침공"
+      }
+    ]
+  },
+  "safe_haven": {
+    "id": "safe_haven",
+    "term": "Safe Haven",
+    "termEn": "Safe Haven",
+    "definition": "A level built on a Pure sector that has Population 6 and 3 Guilds, and only during Evaluation when you have reached Tier 4 on the matching Civilization track. In cooperative/solo mode, each incomplete Safe Haven adds 20 to the Voidborn&#039;s final Influence.",
+    "related": [
+      {
+        "id": "civilization_track",
+        "term": "문명 트랙"
+      },
+      {
+        "id": "tier",
+        "term": "Tier"
+      },
+      {
+        "id": "population",
+        "term": "인구"
+      },
+      {
+        "id": "guild",
+        "term": "길드"
+      }
+    ]
+  },
+  "salvo": {
+    "id": "salvo",
+    "term": "일제사격 단계",
+    "termEn": "Salvo",
+    "definition": "전투의 주 단계로, 양측 함대가 동시에 서로에게 화력을 쏟아붓습니다. 사거리와 특수 기술에 따라 먼저 타격할 수도 있습니다.",
+    "related": [
+      {
+        "id": "combat",
+        "term": "전투"
+      },
+      {
+        "id": "initiative",
+        "term": "Initiative"
+      },
+      {
+        "id": "damage",
+        "term": "피해"
+      },
+      {
+        "id": "absorption",
+        "term": "흡수"
+      }
+    ]
+  },
+  "sector": {
+    "id": "sector",
+    "term": "섹터",
+    "termEn": "Sector",
+    "definition": "은하 지도를 이루는 육각형(Hex) 구역 단위입니다. 인구, 자원 길드, 방어 시설, 성간 기지가 위치합니다.",
+    "related": [
+      {
+        "id": "home_sector",
+        "term": "Home Sector"
+      },
+      {
+        "id": "voidborn",
+        "term": "공허태생"
+      },
+      {
+        "id": "guild",
+        "term": "길드"
+      },
+      {
+        "id": "installation",
+        "term": "시설물"
+      },
+      {
+        "id": "population",
+        "term": "인구"
+      }
+    ]
+  },
+  "sector_defense": {
+    "id": "sector_defense",
+    "term": "섹터 방어 시설",
+    "termEn": "Sector Defense",
+    "definition": "섹터를 지키는 자동화 방어 포탑으로 접근 단계에서 침공자에게 피해를 입히며 침공 난이도를 높입니다.",
+    "related": [
+      {
+        "id": "installation",
+        "term": "시설물"
+      },
+      {
+        "id": "approach",
+        "term": "접근 단계"
+      },
+      {
+        "id": "damage",
+        "term": "피해"
+      },
+      {
+        "id": "combat",
+        "term": "전투"
+      }
+    ]
+  },
+  "shipyard": {
+    "id": "shipyard",
+    "term": "우주 조선소",
+    "termEn": "Shipyard",
+    "definition": "새로운 함대 전투력을 건조하고 전장에 배치할 수 있는 우주 제조 기지입니다.",
+    "related": [
+      {
+        "id": "installation",
+        "term": "시설물"
+      },
+      {
+        "id": "deploy",
+        "term": "Deploy"
+      },
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      },
+      {
+        "id": "starbase",
+        "term": "성간 기지"
+      }
+    ]
+  },
+  "skirmish": {
+    "id": "skirmish",
+    "term": "Skirmish",
+    "termEn": "Skirmish",
+    "definition": "A Voidborn attack that occurs during the Evaluation phase (competitive mode) or as part of War Alert Crisis resolution (cooperative/solo mode). The Voidborn attempts to invade or damage player-controlled sectors.",
+    "related": [
+      {
+        "id": "voidborn",
+        "term": "공허태생"
+      },
+      {
+        "id": "combat",
+        "term": "전투"
+      }
+    ]
+  },
+  "starbase": {
+    "id": "starbase",
+    "term": "성간 기지",
+    "termEn": "Starbase",
+    "definition": "섹터의 핵심 군사 거점입니다. 방어 시 접근 피해를 주고, 섹터의 최대 함대 주둔 한도를 늘려줍니다.",
+    "related": [
+      {
+        "id": "installation",
+        "term": "시설물"
+      },
+      {
+        "id": "shipyard",
+        "term": "우주 조선소"
+      },
+      {
+        "id": "sector_defense",
+        "term": "섹터 방어 시설"
+      },
+      {
+        "id": "technology",
+        "term": "기술 카드"
+      }
+    ]
+  },
+  "stockpile": {
+    "id": "stockpile",
+    "term": "Stockpile",
+    "termEn": "Stockpile",
+    "definition": "Your current supply of a resource. Each resource has a maximum stockpile cap of 15. If production would cause your stockpile to exceed 15, the excess is lost but you gain 3 Influence per instance of overproduction.",
+    "related": [
+      {
+        "id": "overproduction",
+        "term": "초과 생산 보너스"
+      },
+      {
+        "id": "production_yield",
+        "term": "Production Yield"
+      }
+    ]
+  },
+  "technology": {
+    "id": "technology",
+    "term": "기술 카드",
+    "termEn": "Technology",
+    "definition": "게임 중 연구하여 획득하는 지속 능력 카드입니다. 기본 기술과 더 강력한 개량 기술로 나뉩니다.",
+    "related": [
+      {
+        "id": "civilization_track",
+        "term": "문명 트랙"
+      },
+      {
+        "id": "tier",
+        "term": "Tier"
+      },
+      {
+        "id": "influence",
+        "term": "영향력 (승점)"
+      }
+    ]
+  },
+  "tier": {
+    "id": "tier",
+    "term": "Tier",
+    "termEn": "Tier",
+    "definition": "A level on a Civilization track, ranging from 0 to 4. Entering Tiers 1 and 2 unlocks Improved Technology slots. Entering Tiers 3 and 4 requires deactivating Fleet Power first. Tier 4 is needed for building Safe Haven levels.",
+    "related": [
+      {
+        "id": "civilization_track",
+        "term": "문명 트랙"
+      },
+      {
+        "id": "technology",
+        "term": "기술 카드"
+      },
+      {
+        "id": "fleet_power",
+        "term": "함대 전투력"
+      }
+    ]
+  },
+  "trade_token": {
+    "id": "trade_token",
+    "term": "Trade Token",
+    "termEn": "Trade Token",
+    "definition": "A token gained from the Galactic board and Trade bonuses. Its primary use is to flip during the Selection step to take all 3 Focus actions instead of just 2. Trade tokens are stored on Agenda slots or returned to the Galactic board during Clean-up. You cannot flip a token the same turn you gain it.",
+    "related": [
+      {
+        "id": "focus_card",
+        "term": "집중 카드"
+      },
+      {
+        "id": "agenda",
+        "term": "의제 카드"
+      }
+    ]
+  },
+  "upkeep": {
+    "id": "upkeep",
+    "term": "유지비",
+    "termEn": "Upkeep",
+    "definition": "각 사이클 평가 단계에서 함대 규모와 문명 유지에 지불해야 하는 식량 및 에너지 비용입니다.",
+    "related": [
+      {
+        "id": "influence",
+        "term": "영향력 (승점)"
+      },
+      {
+        "id": "agenda",
+        "term": "의제 카드"
+      },
+      {
+        "id": "sector",
+        "term": "섹터"
+      }
+    ]
+  },
+  "voidborn": {
+    "id": "voidborn",
+    "term": "공허태생",
+    "termEn": "Voidborn",
+    "definition": "은하계 전체를 부패로 잠식하고 파멸로 몰고 가는 주 적대 세력입니다.",
+    "related": [
+      {
+        "id": "sector",
+        "term": "섹터"
+      },
+      {
+        "id": "corruption",
+        "term": "부패"
+      },
+      {
+        "id": "skirmish",
+        "term": "Skirmish"
+      }
+    ]
+  },
+  "voidstorm": {
+    "id": "voidstorm",
+    "term": "공허폭풍",
+    "termEn": "Voidstorm",
+    "definition": "특정 섹터 간의 이동을 차단하거나 위험하게 만드는 우주적 이상 현상입니다.",
+    "related": [
+      {
+        "id": "sector",
+        "term": "섹터"
+      },
+      {
+        "id": "regroup",
+        "term": "재정비 이동"
+      },
+      {
+        "id": "invade",
+        "term": "침공"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1208 @@
+[
+  {
+    "index": 0,
+    "title": "You Lead a Galactic House",
+    "layer": "Welcome to Voidfall",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Welcome to <strong>Voidfall</strong> -- a space civilization game of exploration, expansion, exploitation, and extermination (the classic 4X formula) wrapped in a tight euro-game framework.",
+      "You are the leader of a Galactic House, one of the great powers in a galaxy under siege. An existential threat called the {{glossary:voidborn|Voidborn}} has been consuming entire star systems, leaving nothing but darkness and {{glossary:corruption|Corruption}} in its wake. Your mission is twofold: push back the Voidborn and build a thriving interstellar empire.",
+      "Voidfall is designed by Nigel Buckle and David Turczi, published by Mindclash Games in 2023. It supports 1-4 players and plays in roughly 2 to 4 hours depending on player count. This is a heavy game (complexity 4.6 out of 5), but the rules are logical and interconnected -- once the core systems click, everything flows naturally.",
+      "Do not worry about memorizing everything at once. This teaching flow builds understanding layer by layer. Each new concept connects to what you already know."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>Do not worry about memorizing everything at once. This teaching flow builds understanding layer by layer. Each new concept connects to what you already know.</p>"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "title": "Your Goal: Influence",
+    "layer": "Welcome to Voidfall",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "The victory currency of Voidfall is {{glossary:influence|Influence}}. Everything you do -- conquering {{glossary:sector|Sector}}s, completing objectives, advancing your civilization, building an efficient economy -- ultimately serves the goal of accumulating Influence.",
+      "<strong>In competitive mode</strong> (2-4 players): The player with the most Influence at the end of the game wins. If tied, the player with fewer {{glossary:corruption|Corruption}} markers on their House mat and sectors wins.",
+      "<strong>In cooperative/solo mode</strong>: All players must individually exceed the {{glossary:voidborn|Voidborn}}'s collective Influence total. The Voidborn's score is calculated at end of game based on how much destruction it caused -- every Catastrophe, Corruption marker, and unresolved Crisis adds to its total.",
+      "Influence is tracked on your personal Influence board with dials. Many different game actions generate or cost Influence, so keep an eye on your total throughout the game."
+    ],
+    "callouts": [
+      {
+        "type": "important",
+        "content": "<p>Influence is tracked on your personal Influence board with dials. Many different game actions generate or cost Influence, so keep an eye on your total throughout the game.</p>"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "title": "Check: What Is the Victory Currency?",
+    "layer": "Welcome to Voidfall",
+    "isQuiz": true,
+    "quiz": {
+      "question": "What is the victory currency in Voidfall?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "Credits"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "Influence"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "Fleet Power"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "Glory"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "What is the victory currency in Voidfall?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 3,
+    "title": "Three Ways to Play",
+    "layer": "Welcome to Voidfall",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Voidfall offers three distinct game modes. Tap each to learn more.",
+      "Players compete for {{glossary:influence|Influence}}. You fight the {{glossary:voidborn|Voidborn}} while also vying against each other for territory and objectives. The player with the most Influence at the end wins.",
+      "Players work together against the Voidborn. Additional Crisis mechanics create ongoing threats. All players must individually exceed the Voidborn's collective Influence total to win. Difficulty levels set the Voidborn's base score at 60, 100, or 140.",
+      "You face the Voidborn alone using the same cooperative rules and Crisis mechanics. The Voidborn's base Influence starts at 60 (easy), 100 (medium), or 140 (hard). You must exceed its total to win."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 4,
+    "title": "Exactly Three Cycles",
+    "layer": "Welcome to Voidfall",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Voidfall lasts exactly <strong>3 Cycles</strong>. There is no way to shorten or extend the game. Each Cycle is divided into three phases:",
+      "The number of Focus rounds per Cycle varies and is shown on the Galactic Event card revealed during Preparation. This means you will know exactly how many turns you have left in each Cycle to plan your actions.",
+      "With only 3 Cycles, every turn matters. Count the remaining Focus rounds on the Galactic Event card and plan your priorities accordingly."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>With only 3 Cycles, every turn matters. Count the remaining Focus rounds on the Galactic Event card and plan your priorities accordingly.</p>"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "title": "Cycle Structure",
+    "layer": "When Does It End?",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": "flowchart TD\n  n_start([&quot;Cycle Begins&quot;])\n  n_prep[&quot;1. Preparation Phase&quot;]\n  n_focus[&quot;2. Focus Phase&quot;]\n  n_eval[&quot;3. Evaluation Phase&quot;]\n  n_check{&quot;Cycle 3 complete?&quot;}\n  n_end([&quot;Final Scoring&quot;])\n  n_next[&quot;Next Cycle&quot;]\n  n_start --&gt; n_prep\n  n_prep --&gt; n_focus\n  n_focus --&gt; n_eval\n  n_eval --&gt; n_check\n  n_check -- &quot;Yes&quot; --&gt; n_end\n  n_check -- &quot;No&quot; --&gt; n_next\n  n_next --&gt; n_prep\n  classDef startNode fill:#64ffda,stroke:#64ffda,color:#131620,font-weight:bold\n  class n_start startNode\n  classDef endNode fill:#64ffda,stroke:#64ffda,color:#131620,font-weight:bold\n  class n_end endNode\n  classDef decisionNode fill:#ffb74d,stroke:#ffb74d,color:#1a1a2e,font-weight:bold\n  class n_check decisionNode",
+    "paragraphs": [],
+    "callouts": []
+  },
+  {
+    "index": 6,
+    "title": "Check: How Many Cycles?",
+    "layer": "When Does It End?",
+    "isQuiz": true,
+    "quiz": {
+      "question": "How many Cycles does a game of Voidfall last?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "It varies based on player count"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "How many Cycles does a game of Voidfall last?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 7,
+    "title": "Many Paths to Influence",
+    "layer": "When Does It End?",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "{{glossary:influence|Influence}} flows from many different sources throughout the game. Understanding where Influence comes from helps you focus your strategy. Here are the primary sources:",
+      "<strong>Recurring sources (each Cycle during Evaluation):</strong>",
+      "<strong>During play:</strong>",
+      "There is no single dominant path. The best players find synergies between economic production, military expansion, and objective completion.",
+      "Overproduction is easy to overlook but can be extremely powerful. Building a massive production engine that regularly exceeds the stockpile cap of 15 generates steady Influence income."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>Overproduction is easy to overlook but can be extremely powerful. Building a massive production engine that regularly exceeds the stockpile cap of 15 generates steady Influence income.</p>"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "title": "Competitive vs Cooperative Win Conditions",
+    "layer": "How Do You Score?",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [],
+    "callouts": []
+  },
+  {
+    "index": 9,
+    "title": "Check: Overproduction Bonus",
+    "layer": "How Do You Score?",
+    "isQuiz": true,
+    "quiz": {
+      "question": "What happens when producing a resource would exceed your stockpile cap of 15?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "The excess is simply lost with no benefit"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "You gain 3 Influence per instance of overproduction"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "You must discard resources to make room"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "You gain 1 Influence per excess resource"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "What happens when producing a resource would exceed your stockpile cap of 15?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 10,
+    "title": "Sectors: The Building Blocks of the Galaxy",
+    "layer": "How Do You Score?",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "The galaxy is made up of hexagonal tiles called {{glossary:sector|Sector}}s. Every sector on the map is in one of three control states:",
+      "Sectors that share a hex edge are <strong>adjacent</strong>. Adjacency is critical -- you can only {{glossary:regroup|Regroup}} fleet between adjacent sectors you control, and you can only {{glossary:invade|Invade}} sectors adjacent to ones you already hold.",
+      "Voidstorm tokens placed between sectors break adjacency. Two sectors separated by a Voidstorm are not considered adjacent, even if they share an edge. This can block your expansion routes."
+    ],
+    "callouts": [
+      {
+        "type": "important",
+        "content": "<p>Voidstorm tokens placed between sectors break adjacency. Two sectors separated by a Voidstorm are not considered adjacent, even if they share an edge. This can block your expansion routes.</p>"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "title": "Pure vs Corrupted Sectors",
+    "layer": "The Galaxy Map",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Sectors can be {{glossary:pure|Pure}} or {{glossary:corrupted|Corrupted}}:",
+      "When you conquer a Voidborn sector, it often starts Corrupted. Removing that Corruption is important for unlocking the sector's full potential."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 12,
+    "title": "Sector Infrastructure",
+    "layer": "The Galaxy Map",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Each sector has spaces for infrastructure and a Population value. Tap each element to learn more.",
+      "Most sectors have a {{glossary:population|Population}} value shown by a die. Population drives your resource production -- each {{glossary:guild|Guild}} in a sector adds that sector's Population to the matching resource's {{glossary:production_level|Production Level}}. Higher Population means more resources.",
+      "Each sector has up to 3 spaces for {{glossary:guild|Guild}}s. The 5 Guild types correspond to the 5 resources: Farmers (Food), Engineers (Energy), Miners (Materials), Bankers (Credits), Scientists (Science). Fill the leftmost empty space first.",
+      "Each sector has up to 3 spaces for {{glossary:installation|Installation}}s: {{glossary:sector_defense|Sector Defense}}s, {{glossary:shipyard|Shipyard}}s, and {{glossary:starbase|Starbase}}s. These provide military infrastructure for deploying and defending fleets. Fill the leftmost empty space first.",
+      "Some sectors have unique abilities that trigger when you control them. These provide bonus effects beyond the standard Guild and Installation benefits. Check each sector's text when you claim it."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 13,
+    "title": "Check: Home Sector Security",
+    "layer": "The Galaxy Map",
+    "isQuiz": true,
+    "quiz": {
+      "question": "Can your Home sector be invaded by another player or the Voidborn?",
+      "options": [
+        {
+          "value": "true",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "false",
+          "label": "B",
+          "text": "False"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "Can your Home sector be invaded by another player or the Voidborn?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 14,
+    "title": "Five Resources",
+    "layer": "The Galaxy Map",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Voidfall has 5 resources that fuel your empire:",
+      "Each resource has a {{glossary:stockpile|Stockpile}} that caps at <strong>15</strong>. You can never hold more than 15 of any single resource (but exceeding it triggers the valuable {{glossary:overproduction|Overproduction}} bonus of 3 {{glossary:influence|Influence}}).",
+      "Credits can substitute for Food, Energy, or Materials at a 1:1 rate when spending. However, Credits CANNOT substitute for Science or pay Upkeep. This makes Credits flexible but not universal."
+    ],
+    "callouts": [
+      {
+        "type": "important",
+        "content": "<p>Credits can substitute for Food, Energy, or Materials at a 1:1 rate when spending. However, Credits CANNOT substitute for Science or pay Upkeep. This makes Credits flexible but not universal.</p>"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "title": "How Production Works",
+    "layer": "Resources and Production",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Resource production follows a logical chain:",
+      "<strong>{{glossary:guild|Guild}}s generate {{glossary:production_level|Production Level}}</strong> -- Each Guild adds its {{glossary:sector|Sector}}'s {{glossary:population|Population}} to the matching resource's Production Level. Example: a Farmers Guild in a sector with Population 4 adds 4 to your Food Production Level.",
+      "<strong>Production Level determines {{glossary:production_yield|Production Yield}}</strong> -- Your Production Level maps to a Yield value on your House mat's production track. The Yield is the actual amount of resources you gain. Most resources increase at a steady rate, but Credits increase more slowly.",
+      "<strong>Yield adds to {{glossary:stockpile|Stockpile}}</strong> -- The resources go into your stockpile, capped at 15. Any excess triggers {{glossary:overproduction|Overproduction}} (3 Influence per instance).",
+      "The maximum Production Level is <strong>13</strong> per resource. Since Population ranges from 1-6 and you need multiple Guilds of the same type across different sectors to reach high levels, building a diverse empire with the right Guild placements is essential.",
+      "A sector with high Population and the right Guild type is extremely valuable. A Population 5 sector with a Farmers Guild contributes 5 to your Food Production Level from a single Guild placement."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>A sector with high Population and the right Guild type is extremely valuable. A Population 5 sector with a Farmers Guild contributes 5 to your Food Production Level from a single Guild placement.</p>"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "title": "Check: Credits Flexibility",
+    "layer": "Resources and Production",
+    "isQuiz": true,
+    "quiz": {
+      "question": "Can Credits substitute for Science when spending?",
+      "options": [
+        {
+          "value": "true",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "false",
+          "label": "B",
+          "text": "False"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "Can Credits substitute for Science when spending?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 17,
+    "title": "Turn Structure",
+    "layer": "Resources and Production",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": "flowchart TD\n  n_start([&quot;Your Turn Begins&quot;])\n  n_step0[&quot;Step 0: Reveal Crisis&quot;]\n  n_step1[&quot;Step 1: Selection&quot;]\n  n_step2[&quot;Step 2: Actions&quot;]\n  n_step3[&quot;Step 3: Clean-up&quot;]\n  n_step4[&quot;Step 4: The Void Advances&quot;]\n  n_end([&quot;Turn Ends&quot;])\n  n_start --&gt; n_step0\n  n_step0 --&gt; n_step1\n  n_step1 --&gt; n_step2\n  n_step2 --&gt; n_step3\n  n_step3 --&gt; n_step4\n  n_step4 --&gt; n_end\n  classDef startNode fill:#64ffda,stroke:#64ffda,color:#131620,font-weight:bold\n  class n_start startNode\n  classDef endNode fill:#64ffda,stroke:#64ffda,color:#131620,font-weight:bold\n  class n_end endNode",
+    "paragraphs": [],
+    "callouts": []
+  },
+  {
+    "index": 18,
+    "title": "Step 1: Selection",
+    "layer": "Your Turn",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "At the start of your turn, you must choose 1 {{glossary:focus_card|Focus Card}} from your hand and play it face-up. This card determines which actions are available to you this turn.",
+      "You may also do two optional things during Selection:"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 19,
+    "title": "Step 2: Actions",
+    "layer": "Your Turn",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Your Focus card shows 3 actions: <strong>Top</strong>, <strong>Middle</strong>, and <strong>Bottom</strong>. Normally you take <strong>2 of the 3</strong> actions (your choice). If you flipped a {{glossary:trade_token|Trade Token}} during Selection, you take <strong>all 3</strong>.",
+      "Each action has a <strong>cost</strong> (resources you must pay) and <strong>effects</strong> (what you gain or do). You must pay the cost before resolving the effects.",
+      "Within each action, effects are separated by colored lines:",
+      "In addition to Focus actions, you may also resolve your Agenda action (if you played one) and any Technology actions from your Technology cards.",
+      "Flipping a Trade token to get all 3 actions is extremely powerful. Save your Trade tokens for turns where all 3 actions on your Focus card are valuable to you."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>Flipping a Trade token to get all 3 actions is extremely powerful. Save your Trade tokens for turns where all 3 actions on your Focus card are valuable to you.</p>"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "title": "Step 3: Clean-up",
+    "layer": "Your Turn",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "After taking your actions, tidy up:"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 21,
+    "title": "Check: How Many Actions?",
+    "layer": "Your Turn",
+    "isQuiz": true,
+    "quiz": {
+      "question": "How many Focus actions can you normally take on your turn?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "3"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "As many as you can afford"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "How many Focus actions can you normally take on your turn?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 22,
+    "title": "Fleet Power States",
+    "layer": "Your Turn",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Your military strength is represented by 14 {{glossary:fleet_power|Fleet Power}} cubes in your player color. These are the only player-colored components that go on the galaxy map (besides your {{glossary:home_sector|Home Sector}} Population die).",
+      "Fleet Power cubes exist in three states:"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 23,
+    "title": "Deploying Fleet Power",
+    "layer": "Fleets and Fleet Power",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "To {{glossary:deploy|Deploy}} Fleet Power, you move cubes from your Active area to a sector on the map. When deploying, you choose a Fleet type and place cubes on a {{glossary:fleet_token|Fleet Token}} of that type.",
+      "Each sector can hold a maximum of <strong>2 Fleet tokens</strong>, and each Fleet token holds <strong>1-3 Fleet Power cubes</strong>. So the maximum military presence in a single sector is 6 Fleet Power (2 tokens with 3 cubes each).",
+      "To {{glossary:recall|Recall}} Fleet Power, you move cubes from the map back to your Active area. This happens when you take {{glossary:damage|Damage}} in {{glossary:combat|Combat}}, when you exceed fleet limits during Clean-up, or voluntarily.",
+      "You need a Shipyard or Starbase Installation in a sector to deploy Fleet Power there. Without one, you cannot place new Fleet tokens in that sector."
+    ],
+    "callouts": [
+      {
+        "type": "important",
+        "content": "<p>You need a Shipyard or Starbase Installation in a sector to deploy Fleet Power there. Without one, you cannot place new Fleet tokens in that sector.</p>"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "title": "Fleet Types at a Glance",
+    "layer": "Fleets and Fleet Power",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [],
+    "callouts": []
+  },
+  {
+    "index": 25,
+    "title": "Check: Which Fleet Needs No Technology?",
+    "layer": "Fleets and Fleet Power",
+    "isQuiz": true,
+    "quiz": {
+      "question": "Which Fleet type can be deployed without any Technology?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "Sentry"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "Corvette"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "Destroyer"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "Dreadnought"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "Which Fleet type can be deployed without any Technology?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 26,
+    "title": "Regroup: Moving Between Your Sectors",
+    "layer": "Fleets and Fleet Power",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "{{glossary:regroup|Regroup}} lets you redistribute your military across your territory. You can make up to <strong>5 moves</strong> of {{glossary:fleet_power|Fleet Power}} between adjacent {{glossary:sector|Sector}}s you control.",
+      "Each move shifts one Fleet Power cube from one sector to an adjacent sector. You can move the same cube multiple times (spending multiple moves) or spread the moves across different cubes.",
+      "<strong>Critical restriction:</strong> You cannot move the <strong>last</strong> Fleet Power out of a non-Home sector. If you do, you would abandon that sector. Abandoning sectors is a separate action with its own consequences.",
+      "Use Regroup to concentrate your Fleet Power before launching an invasion. Five moves is enough to pull forces from across your territory to a front-line sector."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>Use Regroup to concentrate your Fleet Power before launching an invasion. Five moves is enough to pull forces from across your territory to a front-line sector.</p>"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "title": "Invade: Taking New Sectors",
+    "layer": "Fleet Movement and Invasion",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "To {{glossary:invade|Invade}}, you select a {{glossary:sector|Sector}} you do not control that is adjacent to one you do. Move {{glossary:fleet_power|Fleet Power}} from your adjacent sector(s) into the target, then resolve {{glossary:combat|Combat}}.",
+      "If you win the combat, you take control of the sector. If you lose, your Fleet Power is recalled and the sector remains under the defender's control.",
+      "<strong>Abandoning sectors:</strong> If you voluntarily leave a sector (move all Fleet Power out), that sector is abandoned. You must discard 1 {{glossary:glory_token|Glory Token}} per abandoned sector, and the {{glossary:voidborn|Voidborn}} takes control of it. Avoid this if possible -- it costs you Glory and gives territory back to the enemy.",
+      "Voidstorm tokens break adjacency. You cannot invade across a Voidstorm, even if the sectors share a hex edge. Plan your expansion routes around these obstacles."
+    ],
+    "callouts": [
+      {
+        "type": "important",
+        "content": "<p>Voidstorm tokens break adjacency. You cannot invade across a Voidstorm, even if the sectors share a hex edge. Plan your expansion routes around these obstacles.</p>"
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "title": "Check: Regroup Movement",
+    "layer": "Fleet Movement and Invasion",
+    "isQuiz": true,
+    "quiz": {
+      "question": "How many movement steps does Regroup give you?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "Up to 5"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "Unlimited within your sectors"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "How many movement steps does Regroup give you?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 29,
+    "title": "Deterministic Combat",
+    "layer": "Fleet Movement and Invasion",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "{{glossary:combat|Combat}} in Voidfall is entirely <strong>deterministic</strong> -- there are no dice, no card draws, no randomness. You can calculate the exact outcome before committing to an invasion. This means combat rewards careful planning and math, not luck.",
+      "Combat has two sides: the <strong>Invader</strong> (the attacking player) and the <strong>Defender</strong> (whoever currently controls the sector -- either the {{glossary:voidborn|Voidborn}} or another player)."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 30,
+    "title": "Combat Sequence",
+    "layer": "Combat",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": "flowchart TD\n  n_start([&quot;Combat Begins&quot;])\n  n_approach[&quot;1. Approach Step&quot;]\n  n_salvo[&quot;2. Salvo Step&quot;]\n  n_check{&quot;One side eliminated?&quot;}\n  n_outcome([&quot;3. Resolve Outcome&quot;])\n  n_start --&gt; n_approach\n  n_approach --&gt; n_salvo\n  n_salvo --&gt; n_check\n  n_check -- &quot;Yes&quot; --&gt; n_outcome\n  n_check -- &quot;No&quot; --&gt; n_salvo\n  classDef startNode fill:#64ffda,stroke:#64ffda,color:#131620,font-weight:bold\n  class n_start startNode\n  classDef endNode fill:#64ffda,stroke:#64ffda,color:#131620,font-weight:bold\n  class n_outcome endNode\n  classDef decisionNode fill:#ffb74d,stroke:#ffb74d,color:#1a1a2e,font-weight:bold\n  class n_check decisionNode",
+    "paragraphs": [],
+    "callouts": []
+  },
+  {
+    "index": 31,
+    "title": "The Approach Step",
+    "layer": "Combat",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "The {{glossary:approach|Approach}} is the first phase of combat. Before the main battle begins:",
+      "Approach Damage can only be cancelled by <strong>Approach {{glossary:absorption|Absorption}}</strong>. Regular Salvo Absorption does not help here."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 32,
+    "title": "Salvo Steps",
+    "layer": "Combat",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "After the Approach, {{glossary:salvo|Salvo}} steps repeat until one side has no {{glossary:fleet_power|Fleet Power}} left:",
+      "Salvo Damage can be cancelled by <strong>Salvo {{glossary:absorption|Absorption}}</strong>. Some Fleet types and Technologies provide Absorption, which negates 1 point of Damage.",
+      "Combat continues until one (or both) sides run out of Fleet Power.",
+      "Since combat is deterministic, always calculate the outcome before invading. Count your Fleet Power and Initiative modifiers against the defender's. Never invade a sector you cannot win."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>Since combat is deterministic, always calculate the outcome before invading. Count your Fleet Power and Initiative modifiers against the defender's. Never invade a sector you cannot win.</p>"
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "title": "Check: Absorption Types",
+    "layer": "Combat",
+    "isQuiz": true,
+    "quiz": {
+      "question": "Can Approach Absorption cancel Salvo Damage?",
+      "options": [
+        {
+          "value": "true",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "false",
+          "label": "B",
+          "text": "False"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "Can Approach Absorption cancel Salvo Damage?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 34,
+    "title": "Who Wins the Battle?",
+    "layer": "Combat",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "After {{glossary:combat|Combat}} resolves, there are three possible outcomes:"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 35,
+    "title": "After a Successful Invasion",
+    "layer": "Invasion Outcomes",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "When the Invader wins:",
+      "This means your first invasion might only gain you 1-2 Influence, but as you collect more Glory tokens, each subsequent invasion becomes more valuable. Building a collection of high-value Glory tokens makes every invasion increasingly rewarding.",
+      "Glory tokens have a snowball effect. Each new token increases the Influence you gain from future invasions. Prioritize invasions early to start building your Glory collection."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>Glory tokens have a snowball effect. Each new token increases the Influence you gain from future invasions. Prioritize invasions early to start building your Glory collection.</p>"
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "title": "Voidborn vs Player Sector Invasions",
+    "layer": "Invasion Outcomes",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "The invasion rewards differ depending on whether you are conquering a Voidborn sector or another player's sector (competitive mode only).",
+      "You gain a {{glossary:glory_token|Glory Token}} and earn {{glossary:influence|Influence}} equal to the sum of all your Glory token values. The sector may contain {{glossary:bounty_token|Bounty Token}}s and {{glossary:reclaim_token|Reclaim Token}}s for additional rewards. The sector likely starts with {{glossary:corruption|Corruption}} that you will want to remove.",
+      "You gain {{glossary:influence|Influence}} equal to the sum of the opponent's Glory token values (not yours). The opponent must discard one of their Glory tokens. This is a way to both gain Influence and weaken a rival's Glory collection simultaneously."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 37,
+    "title": "Check: Combat Tie",
+    "layer": "Invasion Outcomes",
+    "isQuiz": true,
+    "quiz": {
+      "question": "What happens when both sides are eliminated in combat (a tie)?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "The Invader wins by default"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "The Defender wins by default"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "The Defender discards a Glory token and the sector is abandoned"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "Combat continues in the next round"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "What happens when both sides are eliminated in combat (a tie)?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 38,
+    "title": "Technology Cards",
+    "layer": "Invasion Outcomes",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "{{glossary:technology|Technology}} cards are powerful upgrades that enhance your capabilities. There are <strong>84 Technology cards</strong> in the game: 56 Basic and 28 Improved.",
+      "Each Technology card provides three things:",
+      "You have a <strong>limit of 5 Technologies</strong> at any time. This can increase to 6 by invading a Fallen House sector.",
+      "Technologies modify nearly every aspect of the game: they enable advanced Fleet types, enhance {{glossary:combat|Combat}} with {{glossary:initiative|Initiative}} and {{glossary:absorption|Absorption}} bonuses, improve resource {{glossary:production_level|Production Level}}s, and unlock powerful strategic options.",
+      "Technologies are how you specialize your Galactic House. A military-focused player might prioritize Fleet Technologies, while an economic player focuses on production enhancements. Choose Technologies that complement your overall strategy."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>Technologies are how you specialize your Galactic House. A military-focused player might prioritize Fleet Technologies, while an economic player focuses on production enhancements. Choose Technologies that complement your overall strategy.</p>"
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "title": "Basic vs Improved Technologies",
+    "layer": "Technologies",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "<strong>Basic Technologies</strong> can be acquired freely from the available tableau.",
+      "<strong>Improved Technologies</strong> are upgraded versions that require all three conditions:",
+      "Your Improved Technology limit is determined by your {{glossary:civilization_track|Civilization Track}} progress. Each track that reaches {{glossary:tier|Tier}} 1 unlocks 1 Improved Technology slot, and reaching Tier 2 on the same track unlocks another. So advancing all 3 tracks to Tier 2 gives you 6 Improved Technology slots."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 40,
+    "title": "Check: Technology Limit",
+    "layer": "Technologies",
+    "isQuiz": true,
+    "quiz": {
+      "question": "What is the starting Technology limit per player?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "6"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "What is the starting Technology limit per player?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 41,
+    "title": "Four Agenda Types",
+    "layer": "Technologies",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "{{glossary:agenda|Agenda}}s are strategic objective cards that drive your long-term planning. There are 4 types:",
+      "You gain Agendas from the Agenda board's available offers. Some offers are {{glossary:corrupted|Corrupted}} -- taking them forces you to gain a {{glossary:corruption|Corruption}} marker along with the Agenda."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 42,
+    "title": "Playing and Placing Agendas",
+    "layer": "Agendas",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "The Agenda lifecycle has three stages:",
+      "<strong>Evaluation scoring:</strong> During the Evaluation phase, each {{glossary:pure|Pure}} Agenda (without {{glossary:corruption|Corruption}} above it in its slot) is evaluated. Agendas have multiple sections with either achievements (exact rewards) or multipliers (per qualifying item). The benefit is always {{glossary:influence|Influence}}.",
+      "A Corrupted Agenda cannot score. If a Corruption marker sits above an Agenda in its slot, that Agenda is skipped during Evaluation. Keeping your Agenda slots pure is critical for scoring."
+    ],
+    "callouts": [
+      {
+        "type": "important",
+        "content": "<p>A Corrupted Agenda cannot score. If a Corruption marker sits above an Agenda in its slot, that Agenda is skipped during Evaluation. Keeping your Agenda slots pure is critical for scoring.</p>"
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "title": "Check: Corrupted Agendas",
+    "layer": "Agendas",
+    "isQuiz": true,
+    "quiz": {
+      "question": "Can a Corrupted Agenda score Influence during Evaluation?",
+      "options": [
+        {
+          "value": "true",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "false",
+          "label": "B",
+          "text": "False"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "Can a Corrupted Agenda score Influence during Evaluation?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 44,
+    "title": "Three Tracks, Five Tiers",
+    "layer": "Agendas",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Your Galactic House has 3 {{glossary:civilization_track|Civilization Track}}s representing different aspects of your civilization's development:",
+      "Each track has 5 {{glossary:tier|Tier}}s (0 through 4). You start at Tier 0 on all tracks and advance by spending the required costs during your actions.",
+      "Each Galactic House has <strong>unique benefits</strong> at each Tier on each track. This is one of the key asymmetric elements of Voidfall -- two players advancing the same track may unlock completely different abilities.",
+      "Read your House's track benefits carefully at the start of the game. They define your strengths and help guide your strategic direction."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>Read your House's track benefits carefully at the start of the game. They define your strengths and help guide your strategic direction.</p>"
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "title": "Advancement Rules",
+    "layer": "Civilization Tracks",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "Advancing on {{glossary:civilization_track|Civilization Track}}s has important rules:",
+      "<strong>{{glossary:corrupted|Corrupted}} tracks:</strong> If a Corruption marker is on a Civilization track, you can still advance on it, but you <strong>do not gain the benefits</strong> of advancement until the Corruption is removed.",
+      "Deactivating Fleet Power for Tier 3-4 entry is a real cost. You temporarily weaken your military to advance your civilization. Time this carefully -- do not deactivate when you need those forces for defense."
+    ],
+    "callouts": [
+      {
+        "type": "important",
+        "content": "<p>Deactivating Fleet Power for Tier 3-4 entry is a real cost. You temporarily weaken your military to advance your civilization. Time this carefully -- do not deactivate when you need those forces for defense.</p>"
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "title": "Check: Entering Higher Tiers",
+    "layer": "Civilization Tracks",
+    "isQuiz": true,
+    "quiz": {
+      "question": "What must you do before entering Tier 3 or 4 on a Civilization track?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "Pay extra resources"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "Deactivate Fleet Power"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "Remove a Corruption marker"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "Discard a Technology card"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "What must you do before entering Tier 3 or 4 on a Civilization track?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 47,
+    "title": "How Corruption Works",
+    "layer": "Civilization Tracks",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "{{glossary:corruption|Corruption}} is the Voidborn's lasting mark on the galaxy. It is a persistent negative effect represented by markers placed on various parts of your game state. Corruption disables key functions:"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 48,
+    "title": "Gaining, Moving, and Removing Corruption",
+    "layer": "Corruption",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "<strong>Gaining Corruption</strong> happens through several means:",
+      "<strong>Placement options</strong> when you must place a Corruption marker:",
+      "<strong>Removing Corruption</strong> is possible through various game effects -- certain Focus actions, Technology abilities, and other mechanisms allow you to discard Corruption markers. Prioritize removing Corruption from the locations where it hurts you most.",
+      "When forced to place Corruption, think carefully about where it hurts least. A Corrupted sector with low Population might be acceptable, while a Corrupted Agenda slot can cost you significant Influence every Evaluation."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>When forced to place Corruption, think carefully about where it hurts least. A Corrupted sector with low Population might be acceptable, while a Corrupted Agenda slot can cost you significant Influence every Evaluation.</p>"
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "title": "Check: Corrupted Civilization Tracks",
+    "layer": "Corruption",
+    "isQuiz": true,
+    "quiz": {
+      "question": "Can Corrupted Civilization tracks grant their tier benefits?",
+      "options": [
+        {
+          "value": "true",
+          "label": "A",
+          "text": "True"
+        },
+        {
+          "value": "false",
+          "label": "B",
+          "text": "False"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "Can Corrupted Civilization tracks grant their tier benefits?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 50,
+    "title": "Evaluation Phase Steps",
+    "layer": "Corruption",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": "flowchart TD\n  n_start([&quot;Evaluation Begins&quot;])\n  n_voidborn[&quot;1. Voidborn Strikes / Crisis&quot;]\n  n_upkeep[&quot;2. Upkeep&quot;]\n  n_galactic[&quot;3. Galactic Objectives&quot;]\n  n_agenda[&quot;4. Agenda Objectives&quot;]\n  n_draw[&quot;5. Draw Focuses&quot;]\n  n_end([&quot;Evaluation Complete&quot;])\n  n_start --&gt; n_voidborn\n  n_voidborn --&gt; n_upkeep\n  n_upkeep --&gt; n_galactic\n  n_galactic --&gt; n_agenda\n  n_agenda --&gt; n_draw\n  n_draw --&gt; n_end\n  classDef startNode fill:#64ffda,stroke:#64ffda,color:#131620,font-weight:bold\n  class n_start startNode\n  classDef endNode fill:#64ffda,stroke:#64ffda,color:#131620,font-weight:bold\n  class n_end endNode",
+    "paragraphs": [],
+    "callouts": []
+  },
+  {
+    "index": 51,
+    "title": "Upkeep",
+    "layer": "Evaluation Phase",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "{{glossary:upkeep|Upkeep}} represents the maintenance cost of running your empire. Your total Upkeep is the sum of:",
+      "To pay each point of Upkeep, spend <strong>1 Food</strong> or a combination of <strong>Materials and Energy</strong>. Each point of Upkeep you fail to pay costs you <strong>3 {{glossary:influence|Influence}}</strong>.",
+      "<strong>Important:</strong> Credits cannot pay Upkeep. Even though Credits substitute for Food/Energy/Materials in normal spending, Upkeep is an exception. You must use actual Food, Energy, or Materials.",
+      "Unpaid Upkeep at 3 Influence per point adds up fast. If you have 5 unpaid Upkeep, that is 15 Influence lost. Always plan your resource production to cover Upkeep before expanding further."
+    ],
+    "callouts": [
+      {
+        "type": "important",
+        "content": "<p>Unpaid Upkeep at 3 Influence per point adds up fast. If you have 5 unpaid Upkeep, that is 15 Influence lost. Always plan your resource production to cover Upkeep before expanding further.</p>"
+      }
+    ]
+  },
+  {
+    "index": 52,
+    "title": "Galactic and Agenda Objectives",
+    "layer": "Evaluation Phase",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "<strong>Galactic Objectives</strong> come from the right side of the {{glossary:galactic_event|Galactic Event}} card revealed during Preparation. They apply to all players and come in two forms:",
+      "<strong>{{glossary:agenda|Agenda}} Objectives</strong> work similarly but come from your placed Agendas. Only {{glossary:pure|Pure}} Agendas (without {{glossary:corruption|Corruption}} above them in their slot) are evaluated. The benefit from Agenda objectives is always {{glossary:influence|Influence}}."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 53,
+    "title": "Check: Upkeep Penalty",
+    "layer": "Evaluation Phase",
+    "isQuiz": true,
+    "quiz": {
+      "question": "How much Influence do you lose for each unpaid Upkeep?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "1 Influence"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "2 Influence"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "3 Influence"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "5 Influence"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "How much Influence do you lose for each unpaid Upkeep?"
+    ],
+    "callouts": []
+  },
+  {
+    "index": 54,
+    "title": "Competitive End Game",
+    "layer": "Evaluation Phase",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "In <strong>competitive mode</strong>, the game ends after the Cycle 3 Evaluation phase. The player with the most {{glossary:influence|Influence}} wins.",
+      "<strong>Tiebreaker:</strong> If two or more players are tied on Influence, the player with <strong>fewer {{glossary:corruption|Corruption}} markers</strong> on their House mat and controlled {{glossary:sector|Sector}}s wins. A cleaner empire breaks the tie.",
+      "Your final Influence total reflects everything you accomplished across all 3 Cycles: Agenda scoring, Galactic objectives, invasion Glory, Technology bonuses, Overproduction, and minus any penalties from unpaid Upkeep or other losses.",
+      "In a close competitive game, Corruption markers become the tiebreaker. Removing Corruption is not just about unlocking benefits -- it can win you the game in a tie."
+    ],
+    "callouts": [
+      {
+        "type": "tip",
+        "content": "<p>In a close competitive game, Corruption markers become the tiebreaker. Removing Corruption is not just about unlocking benefits -- it can win you the game in a tie.</p>"
+      }
+    ]
+  },
+  {
+    "index": 55,
+    "title": "Cooperative / Solo End Game",
+    "layer": "End of Game Scoring",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "In <strong>cooperative and solo mode</strong>, you do not compete against each other. Instead, you calculate the {{glossary:voidborn|Voidborn}}'s total {{glossary:influence|Influence}} and every player must individually exceed that number to win.",
+      "The Voidborn's Influence starts at a base value determined by difficulty:",
+      "Then additional penalties are added based on how much damage the Voidborn inflicted during the game."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 56,
+    "title": "Voidborn Influence Breakdown",
+    "layer": "End of Game Scoring",
+    "isQuiz": false,
+    "quiz": null,
+    "diagram": null,
+    "paragraphs": [
+      "The Voidborn's final Influence is calculated by adding all of these sources to the base value. Tap each to see the details.",
+      "Each Rift on the map adds 30 to the Voidborn's {{glossary:influence|Influence}}. Rifts represent major breaches in the galaxy's defenses.",
+      "Each {{glossary:safe_haven|Safe Haven}} level that was not completed adds 20 to the Voidborn's total. Building Safe Havens requires reaching {{glossary:tier|Tier}} 4 on {{glossary:civilization_track|Civilization Track}}s.",
+      "Each {{glossary:catastrophe|Catastrophe}} token adds 20. Catastrophes occur when {{glossary:crisis|Crisis}} cards are pushed off the Crisis board.",
+      "Each {{glossary:harbinger|Harbinger}} still on the galaxy map adds 10. Clearing Harbingers reduces the Voidborn's score.",
+      "Each {{glossary:technology|Technology}} card consumed (removed from the game) by the Voidborn adds 5 to its total.",
+      "Each unresolved {{glossary:crisis|Crisis}} still on the Crisis board at game end adds 5.",
+      "Each Fallen House card (representing destroyed civilizations) adds 3 to the Voidborn's Influence.",
+      "Every single {{glossary:corruption|Corruption}} marker in the game -- on sectors, Agenda slots, and {{glossary:civilization_track|Civilization Track}}s -- adds 2 to the Voidborn's total.",
+      "Each point of {{glossary:population|Population}} in Voidborn {{glossary:sector|Sector}}s that do not contain any player {{glossary:fleet_power|Fleet Power}} adds 1 to the Voidborn's score."
+    ],
+    "callouts": []
+  },
+  {
+    "index": 57,
+    "title": "Check: Co-op Base Difficulty",
+    "layer": "End of Game Scoring",
+    "isQuiz": true,
+    "quiz": {
+      "question": "In cooperative mode, what is the Voidborn's base Influence on Easy difficulty?",
+      "options": [
+        {
+          "value": "a",
+          "label": "A",
+          "text": "40"
+        },
+        {
+          "value": "b",
+          "label": "B",
+          "text": "60"
+        },
+        {
+          "value": "c",
+          "label": "C",
+          "text": "100"
+        },
+        {
+          "value": "d",
+          "label": "D",
+          "text": "140"
+        }
+      ]
+    },
+    "diagram": null,
+    "paragraphs": [
+      "In cooperative mode, what is the Voidborn's base Influence on Easy difficulty?"
+    ],
+    "callouts": []
+  }
+]
