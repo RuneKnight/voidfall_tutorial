@@ -32,6 +32,9 @@ export default function HomePage() {
           <span className="brand-name">VOIDFALL KR</span>
         </div>
         <div className="nav-actions">
+          <Link href="/assist" className="nav-assist-link">
+            ⚔️ 플레이 어시스트
+          </Link>
           <Link href={resumeUrl} className="nav-play-link">
             튜토리얼 입장
           </Link>
@@ -60,16 +63,22 @@ export default function HomePage() {
 
         {/* CTA Buttons */}
         <div className="cta-group">
-          <Link href={resumeUrl} className="cta-btn primary-btn">
-            <span>
-              {hasProgress
-                ? `이어서 학습하기: Chapter ${currentLayer.index + 1} - ${stepInChapter}단계`
-                : '튜토리얼 시작하기'}
-            </span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
+          <div className="cta-primary-row">
+            <Link href={resumeUrl} className="cta-btn primary-btn">
+              <span>
+                {hasProgress
+                  ? `이어서 학습하기: Chapter ${currentLayer.index + 1} - ${stepInChapter}단계`
+                  : '튜토리얼 시작하기'}
+              </span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+
+            <Link href="/assist" className="cta-btn secondary-btn">
+              <span>⚔️ 플레이 어시스트 (전투 계산기 & 퀵 레퍼런스)</span>
+            </Link>
+          </div>
 
           {hasProgress && isLoaded && (
             <div className="progress-pill">
@@ -214,6 +223,23 @@ export default function HomePage() {
           gap: 0.75rem;
         }
 
+        .nav-assist-link {
+          font-size: var(--text-sm);
+          font-weight: 600;
+          color: var(--text-primary);
+          background: var(--bg-surface);
+          padding: 0.45rem 0.9rem;
+          border-radius: var(--radius-md);
+          border: 1px solid var(--border-default);
+          transition: all var(--transition-fast);
+        }
+
+        .nav-assist-link:hover {
+          background: var(--surface-hover);
+          text-decoration: none;
+          transform: translateY(-1px);
+        }
+
         .nav-play-link {
           font-size: var(--text-sm);
           font-weight: 600;
@@ -295,13 +321,21 @@ export default function HomePage() {
           margin-bottom: 3rem;
         }
 
+        .cta-primary-row {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+        }
+
         .cta-btn {
           display: inline-flex;
           align-items: center;
           gap: 0.6rem;
           font-size: var(--text-md);
           font-weight: 700;
-          padding: 0.9rem 2rem;
+          padding: 0.9rem 1.8rem;
           border-radius: var(--radius-lg);
           transition: all var(--transition-normal);
         }
@@ -316,6 +350,19 @@ export default function HomePage() {
           filter: brightness(1.1);
           transform: translateY(-2px);
           box-shadow: 0 6px 28px var(--accent-glow);
+          text-decoration: none;
+        }
+
+        .secondary-btn {
+          background: var(--bg-secondary);
+          color: var(--text-primary);
+          border: 1px solid var(--border-default);
+        }
+
+        .secondary-btn:hover {
+          background: var(--bg-surface);
+          border-color: var(--accent-border);
+          transform: translateY(-2px);
           text-decoration: none;
         }
 

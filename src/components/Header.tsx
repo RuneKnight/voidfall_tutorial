@@ -12,6 +12,10 @@ interface HeaderProps {
   onToggleTheme: () => void;
   onOpenOverview: () => void;
   onOpenGlossary: () => void;
+  onOpenQuickSearch?: () => void;
+  onOpenCombatSim?: () => void;
+  wakeLockActive?: boolean;
+  onToggleWakeLock?: () => void;
 }
 
 export function Header({
@@ -23,6 +27,10 @@ export function Header({
   onToggleTheme,
   onOpenOverview,
   onOpenGlossary,
+  onOpenQuickSearch,
+  onOpenCombatSim,
+  wakeLockActive,
+  onToggleWakeLock,
 }: HeaderProps) {
   return (
     <header className="player-header">
@@ -59,6 +67,30 @@ export function Header({
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
           </svg>
         </button>
+
+        {onOpenQuickSearch && (
+          <button
+            type="button"
+            onClick={onOpenQuickSearch}
+            className="header-btn search-btn"
+            title="퀵 레퍼런스 검색 (Ctrl/Cmd + K)"
+            aria-label="퀵 레퍼런스 검색 열기"
+          >
+            🔍
+          </button>
+        )}
+
+        {onOpenCombatSim && (
+          <button
+            type="button"
+            onClick={onOpenCombatSim}
+            className="header-btn combat-btn"
+            title="전투 시뮬레이터"
+            aria-label="전투 시뮬레이터 열기"
+          >
+            ⚔️
+          </button>
+        )}
       </div>
 
       <div className="header-center">
@@ -68,6 +100,18 @@ export function Header({
       </div>
 
       <div className="header-right">
+        {onToggleWakeLock && (
+          <button
+            type="button"
+            onClick={onToggleWakeLock}
+            className={`header-btn wakelock-btn ${wakeLockActive ? 'active' : ''}`}
+            title={wakeLockActive ? '화면 켜짐 유지 중' : '테이블탑 화면 켜짐 유지 토글'}
+            aria-label="화면 켜짐 유지 토글"
+          >
+            💡
+          </button>
+        )}
+
         <span className="step-counter" title="현재 단계">
           {currentStepIndex + 1} / {totalSteps}
         </span>
@@ -142,6 +186,7 @@ export function Header({
           border: 1px solid var(--border-subtle);
           transition: all var(--transition-fast);
           flex-shrink: 0;
+          cursor: pointer;
         }
 
         .header-btn:hover {
@@ -149,6 +194,12 @@ export function Header({
           background: var(--accent-bg);
           border-color: var(--accent-border);
           transform: translateY(-1px);
+        }
+
+        .wakelock-btn.active {
+          background: var(--accent-bg);
+          border-color: var(--accent-border);
+          box-shadow: 0 0 10px var(--accent-glow);
         }
 
         .header-center {
