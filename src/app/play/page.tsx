@@ -6,6 +6,8 @@ import tutorialData from '@/data/tutorial.json';
 import glossaryData from '@/data/glossary.json';
 import { useTutorialProgress } from '@/hooks/useTutorialProgress';
 import { useTheme } from '@/hooks/useTheme';
+import { useQuickSearch } from '@/hooks/useQuickSearch';
+import { useWakeLock } from '@/hooks/useWakeLock';
 import { Header } from '@/components/Header';
 import { ProgressBar } from '@/components/ProgressBar';
 import { StepContent } from '@/components/StepContent';
@@ -13,6 +15,8 @@ import { StepNavigation } from '@/components/StepNavigation';
 import { GlossaryPopover } from '@/components/GlossaryPopover';
 import { GlossaryModal } from '@/components/GlossaryModal';
 import { OverviewModal } from '@/components/OverviewModal';
+import { QuickRefDrawer } from '@/components/QuickRefDrawer';
+import { CombatSimulatorDrawer } from '@/components/CombatSimulatorDrawer';
 import { Step, Layer, GlossaryTerm } from '@/types/tutorial';
 
 function PlayContent() {
@@ -33,6 +37,10 @@ function PlayContent() {
     nextStep,
     prevStep,
   } = useTutorialProgress(steps.length);
+
+  const { isOpen: isQuickSearchOpen, openSearch: openQuickSearch, closeSearch: closeQuickSearch } = useQuickSearch();
+  const [isCombatSimOpen, setIsCombatSimOpen] = useState(false);
+  const { isActive: isWakeLockActive, toggleWakeLock } = useWakeLock();
 
   // Synchronize route query parameters if provided
   useEffect(() => {
@@ -107,6 +115,10 @@ function PlayContent() {
         onToggleTheme={toggleTheme}
         onOpenOverview={() => setIsOverviewOpen(true)}
         onOpenGlossary={() => setIsGlossaryOpen(true)}
+        onOpenQuickSearch={openQuickSearch}
+        onOpenCombatSim={() => setIsCombatSimOpen(true)}
+        wakeLockActive={isWakeLockActive}
+        onToggleWakeLock={toggleWakeLock}
       />
 
       {/* 2. Progress Bar */}
@@ -165,6 +177,23 @@ function PlayContent() {
         glossary={glossary}
         activeTermKey={modalActiveTermKey}
         onSelectTerm={(key) => setModalActiveTermKey(key)}
+      />
+
+      {/* 8. Quick Reference Drawer (Ctrl+K) */}
+      <QuickRefDrawer
+        isOpen={isQuickSearchOpen}
+        onClose={closeQuickSearch}
+        onSelectTerm={(key) => {
+          closeQuickSearch();
+          setModalActiveTermKey(key);
+          setIsGlossaryOpen(true);
+        }}
+      />
+
+      {/* 9. Combat Simulator Drawer */}
+      <CombatSimulatorDrawer
+        isOpen={isCombatSimOpen}
+        onClose={() => setIsCombatSimOpen(false)}
       />
 
       <style jsx>{`
