@@ -1,0 +1,119 @@
+
+> voidfall@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 532ms
+✓ Running next.config.ts took 40ms
+
+ HEAD / 200 in 2.5s (next.js: 2.3s, application-code: 269ms)
+ GET / 200 in 97ms (next.js: 12ms, application-code: 85ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="/" loading={null}>
+        <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+          <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                  <SegmentViewNode type="page" pagePath="src/page.tsx">
+                    <SegmentTrieNode>
+                    <ClientPageRoot Component={function HomePage} serverProvidedParams={{...}}>
+                      <HomePage params={Promise} searchParams={Promise}>
+                        <div className="jsx-762cf6...">
+                          <nav className="jsx-762cf6...">
+                            <div>
+                            <div className="jsx-762cf6...">
+                              <LinkComponent>
+                              <button
+                                type="button"
+                                onClick={function toggleTheme}
+                                title="테마 전환"
+                                aria-label="테마 전환"
+                                className="jsx-762cf65054280e51 theme-btn"
+                              >
++                               🌙
+-                               ☀️
+                          ...
+                  ...
+                ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at button (<anonymous>)
+    at HomePage (src/app/page.tsx:38:11)
+  36 |             튜토리얼 입장
+  37 |           </Link>
+> 38 |           <button
+     |           ^
+  39 |             type="button"
+  40 |             className="theme-btn"
+  41 |             onClick={toggleTheme}
+ GET / 200 in 66ms (next.js: 4ms, application-code: 62ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="/" loading={null}>
+        <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+          <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                  <SegmentViewNode type="page" pagePath="src/page.tsx">
+                    <SegmentTrieNode>
+                    <ClientPageRoot Component={function HomePage} serverProvidedParams={{...}}>
+                      <HomePage params={Promise} searchParams={Promise}>
+                        <div className="jsx-762cf6...">
+                          <nav className="jsx-762cf6...">
+                            <div>
+                            <div className="jsx-762cf6...">
+                              <LinkComponent>
+                              <button
+                                type="button"
+                                onClick={function toggleTheme}
+                                title="테마 전환"
+                                aria-label="테마 전환"
+                                className="jsx-762cf65054280e51 theme-btn"
+                              >
++                               🌙
+-                               ☀️
+                          ...
+                  ...
+                ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at button (<anonymous>)
+    at HomePage (src/app/page.tsx:38:11)
+  36 |             튜토리얼 입장
+  37 |           </Link>
+> 38 |           <button
+     |           ^
+  39 |             type="button"
+  40 |             className="theme-btn"
+  41 |             onClick={toggleTheme}
+ GET /play?ch=layer-0&step=1 200 in 767ms (next.js: 734ms, application-code: 33ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import tutorialData from '@/data/tutorial.json';
 import glossaryData from '@/data/glossary.json';
 import { useTutorialProgress } from '@/hooks/useTutorialProgress';
@@ -14,10 +15,14 @@ import { GlossaryModal } from '@/components/GlossaryModal';
 import { OverviewModal } from '@/components/OverviewModal';
 import { Step, Layer, GlossaryTerm } from '@/types/tutorial';
 
-export default function PlayPage() {
+function PlayContent() {
   const steps = tutorialData.steps as unknown as Step[];
   const layers = tutorialData.layers as unknown as Layer[];
   const glossary = glossaryData as unknown as Record<string, GlossaryTerm>;
+
+  const searchParams = useSearchParams();
+  const chParam = searchParams.get('ch');
+  const stepParam = searchParams.get('step');
 
   const { theme, toggleTheme } = useTheme();
   const {
@@ -28,6 +33,28 @@ export default function PlayPage() {
     nextStep,
     prevStep,
   } = useTutorialProgress(steps.length);
+
+  // Synchronize route query parameters if provided
+  useEffect(() => {
+    if (!isLoaded) return;
+    if (chParam) {
+      const targetLayer = layers.find(
+        (l) => l.id === chParam || `ch-${l.index + 1}` === chParam || `layer-${l.index + 1}` === chParam
+      );
+      if (targetLayer) {
+        let stepIdx = targetLayer.stepStartIndex;
+        if (stepParam) {
+          const parsedStep = parseInt(stepParam, 10);
+          if (!isNaN(parsedStep) && parsedStep >= 1) {
+            stepIdx = Math.min(targetLayer.stepEndIndex, targetLayer.stepStartIndex + parsedStep - 1);
+          }
+        }
+        if (stepIdx !== currentStepIndex) {
+          goToStep(stepIdx);
+        }
+      }
+    }
+  }, [chParam, stepParam, isLoaded]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Modals state
   const [isOverviewOpen, setIsOverviewOpen] = useState(false);
@@ -47,7 +74,6 @@ export default function PlayPage() {
       setPopoverTerm(term);
       setPopoverPos(pos);
     } else {
-      // If term key doesn't match directly, open glossary modal with that query
       setModalActiveTermKey(termKey);
       setIsGlossaryOpen(true);
     }
@@ -65,28 +91,6 @@ export default function PlayPage() {
       <div className="loading-screen">
         <div className="spinner" />
         <p>보이드폴 튜토리얼을 불러오는 중...</p>
-        <style jsx>{`
-          .loading-screen {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            gap: 1rem;
-            color: var(--text-secondary);
-          }
-          .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border-default);
-            border-top-color: var(--color-accent);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-          }
-          @keyframes spin {
-            to { transform: rotate(360deg); }
-          }
-        `}</style>
       </div>
     );
   }
@@ -180,7 +184,44 @@ export default function PlayPage() {
           scroll-behavior: smooth;
           position: relative;
         }
+
+        .loading-screen {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          gap: 1rem;
+          color: var(--text-secondary);
+        }
+
+        .spinner {
+          width: 40px;
+          height: 40px;
+          border: 3px solid var(--border-default);
+          border-top-color: var(--color-accent);
+          border-radius: 50%;
+          animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
       `}</style>
     </div>
+  );
+}
+
+export default function PlayPage() {
+  return (
+    <Suspense
+      fallback={
+        <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+          <span>로딩 중...</span>
+        </div>
+      }
+    >
+      <PlayContent />
+    </Suspense>
   );
 }

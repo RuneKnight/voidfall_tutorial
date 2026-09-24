@@ -9,10 +9,19 @@ import { Layer } from '@/types/tutorial';
 
 export default function HomePage() {
   const layers = tutorialData.layers as unknown as Layer[];
-  const { currentStepIndex, completedSteps, isLoaded, completionPercentage } = useTutorialProgress(tutorialData.meta.totalSteps);
+  const {
+    currentStepIndex,
+    completedSteps,
+    currentLayer,
+    stepInChapter,
+    isLoaded,
+    completionPercentage,
+    getChapterStatus,
+  } = useTutorialProgress(tutorialData.meta.totalSteps);
   const { theme, toggleTheme } = useTheme();
 
   const hasProgress = currentStepIndex > 0 || completedSteps.length > 0;
+  const resumeUrl = `/play?ch=${currentLayer.id}&step=${currentStepIndex + 1}`;
 
   return (
     <div className="home-container">
@@ -23,7 +32,7 @@ export default function HomePage() {
           <span className="brand-name">VOIDFALL KR</span>
         </div>
         <div className="nav-actions">
-          <Link href="/play" className="nav-play-link">
+          <Link href={resumeUrl} className="nav-play-link">
             튜토리얼 입장
           </Link>
           <button
@@ -40,7 +49,7 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <header className="hero-section">
-        <div className="hero-badge">대화형 인터랙티브 룰북</div>
+        <div className="hero-badge">대화형 인터랙티브 룰북 & 테이블탑 플레이 툴</div>
         <h1 className="hero-title">
           보이드폴 <span className="highlight">Voidfall</span>
         </h1>
@@ -51,8 +60,12 @@ export default function HomePage() {
 
         {/* CTA Buttons */}
         <div className="cta-group">
-          <Link href="/play" className="cta-btn primary-btn">
-            <span>{hasProgress ? '이어서 학습하기' : '튜토리얼 시작하기'}</span>
+          <Link href={resumeUrl} className="cta-btn primary-btn">
+            <span>
+              {hasProgress
+                ? `이어서 학습하기: Chapter ${currentLayer.index + 1} - ${stepInChapter}단계`
+                : '튜토리얼 시작하기'}
+            </span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -62,7 +75,7 @@ export default function HomePage() {
             <div className="progress-pill">
               <span className="pill-dot" />
               <span>
-                진행도: {currentStepIndex + 1} / {tutorialData.meta.totalSteps} 단계 ({completionPercentage}%)
+                전체 진행도: {currentStepIndex + 1} / {tutorialData.meta.totalSteps} 단계 ({completionPercentage}%)
               </span>
             </div>
           )}
@@ -100,19 +113,14 @@ export default function HomePage() {
 
         <div className="chapters-grid">
           {layers.map((layer) => {
-            let doneInLayer = 0;
-            for (let i = layer.stepStartIndex; i <= layer.stepEndIndex; i++) {
-              if (completedSteps.includes(i) || (hasProgress && i <= currentStepIndex)) {
-                doneInLayer++;
-              }
-            }
-            const isCompleted = doneInLayer === layer.stepCount;
+            const status = getChapterStatus(layer);
+            const chapterUrl = `/play?ch=${layer.id}&step=${layer.stepStartIndex + 1}`;
 
             return (
               <Link
                 key={layer.id}
-                href="/play"
-                className={`chapter-card glass-panel ${isCompleted ? 'completed' : ''}`}
+                href={chapterUrl}
+                className={`chapter-card glass-panel ${status.toLowerCase()}`}
                 onClick={() => {
                   try {
                     localStorage.setItem(
@@ -130,6 +138,8 @@ export default function HomePage() {
               >
                 <div className="chapter-header">
                   <span className="ch-num">CHAPTER {layer.index + 1}</span>
+                  {status === 'COMPLETED' && <span className="status-badge completed">✓ 완료</span>}
+                  {status === 'IN_PROGRESS' && <span className="status-badge in-progress">학습 중</span>}
                   <span className="ch-time">~{layer.estimatedMinutes}분</span>
                 </div>
                 <h3 className="ch-title">{layer.title}</h3>
@@ -434,6 +444,25 @@ export default function HomePage() {
           font-size: var(--text-xs);
           margin-bottom: 0.25rem;
           gap: 0.5rem;
+        }
+
+        .status-badge {
+          font-size: 0.65rem;
+          font-weight: 700;
+          padding: 0.15rem 0.45rem;
+          border-radius: var(--radius-sm);
+        }
+
+        .status-badge.completed {
+          background: rgba(34, 197, 94, 0.15);
+          color: #4ade80;
+          border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .status-badge.in-progress {
+          background: rgba(234, 179, 8, 0.15);
+          color: #facc15;
+          border: 1px solid rgba(234, 179, 8, 0.3);
         }
 
         .ch-num {
