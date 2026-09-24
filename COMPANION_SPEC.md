@@ -437,3 +437,46 @@ export function calculateCombatResult(
 - **주요 과제**:
   1. Screen Wake Lock API 적용 (`useWakeLock.ts` 및 토글 버튼 UI).
   2. `next-pwa` 또는 Next.js `manifest.ts` + Service Worker 설정으로 완벽한 오프라인 지원.
+
+---
+
+## 5. Detailed Task Execution Breakdown for Autonomous Developers (Jules Task Spec)
+
+자율 개발 AI 에이전트(Jules)가 본 명세서를 읽고 단계별로 기능을 완수할 수 있도록 정의된 세부 개발 단위(Task) 목록입니다.
+
+### Task 1: Direct Routing & State Machine Hook (`useTutorialProgress.ts`)
+- **목표**: URL Query Parameter (`/play?ch=welcome&step=1`)와 LocalStorage 상태 동기화 및 챕터 진도 추적 연동.
+- **세부 작업**:
+  - `src/types/companion.ts` 정의 추가 (`ChapterProgressInfo`, `UserTutorialProgress`).
+  - `src/hooks/useTutorialProgress.ts` 훅 개선: Next.js `useSearchParams` 및 `useRouter` 연동.
+  - `src/app/page.tsx` 히어로 섹션 CTA 및 챕터 카드의 딥링크 URL (`/play?ch=X&step=Y`)과 `COMPLETED` / `IN_PROGRESS` / `NOT_STARTED` 뱃지 시각화.
+
+### Task 2: Core Pure Logic Modules & Data Sets
+- **목표**: UI 제작 전 순수 자바스크립트/타입스크립트 비즈니스 로직 및 연산 모듈 구현.
+- **세부 작업**:
+  - `src/lib/combatEngine.ts`: 보이드폴 100% 결정론적 전투 연산 함수 (`calculateCombatResult`) 구현 (접근 단계 선제 타격, 일제사격 1/2라운드 대미지 교환, 피격 순서 할당).
+  - `src/lib/fuzzySearch.ts`: 한글 초성 분리 연산 유틸리티 및 영문/한글 퍼지 매칭 함수 작성.
+  - `src/data/cheatsheets.json`: 포커스 카드 3장 진행 순서, 3개 사이클 진행 순서, 평가 단계 점검표 데이터 구축.
+
+### Task 3: Quick Reference Drawer & Fuzzy Search UI
+- **목표**: 단축키(Cmd+K) 또는 헤더 🔍 버튼을 통한 대화형 퀵 레퍼런스 Drawer 및 퍼지 검색 구현.
+- **세부 작업**:
+  - `src/hooks/useQuickSearch.ts`: 전역 `KeyDown` 이벤트 리스너 (`Cmd+K` / `Ctrl+K`) 및 Drawer 상태 관리.
+  - `src/components/QuickRefDrawer.tsx`: 검색 폼, 퍼지 검색 엔진 연동, 키워드/치트시트 결과 하이라이트.
+  - `src/components/CheatSheetView.tsx`: 포커스 카드, 사이클 흐름, 평가 단계 점검표 탭 UI.
+  - `src/components/Header.tsx`: 🔍 **"퀵 서치 (Cmd+K)"** 버튼 추가 및 이벤트 바인딩.
+
+### Task 4: Deterministic Combat Simulator UI
+- **목표**: 결정론적 전투 수식을 손쉽게 조작하고 결과를 단계별로 시각화하는 Drawer 개발.
+- **세부 작업**:
+  - `src/components/CombatSimulatorDrawer.tsx`: 공격측(Invader) vs 방어측(Defender) 유닛(초계함/구축함/드레드노트/항모) 수량 조절 카운터, 섹터 방어/성간 기지 스위치, 기술 흡수치 입력 폼.
+  - `src/components/CombatPhaseAnimator.tsx`: 접근 단계 대미지 → 일제사격 1/2라운드 피해 교환 → 침공 성공/방어 성공 뱃지 시각화.
+  - `src/components/Header.tsx`: ⚔️ **"전투 계산기"** 버튼 추가 및 클릭 시 Drawer 오픈.
+
+### Task 5: Tabletop Convenience UX (Wake Lock & PWA)
+- **목표**: 보드게임 플레이 중 모바일 화면 꺼짐 방지 및 오프라인 접근 보장.
+- **세부 작업**:
+  - `src/lib/wakeLock.ts` & `src/hooks/useWakeLock.ts`: Screen Wake Lock API 래퍼 및 브라우저 호환성 제어.
+  - `src/components/WakeLockToggle.tsx`: 헤더 상단 💡 **"화면 켜짐 유지"** 토글 버튼 구현 및 탭 재활성화 자동 처리.
+  - `src/app/manifest.ts`: PWA Web App Manifest 정의 (앱 아이콘, SF 테마 색상 `#131620`).
+
