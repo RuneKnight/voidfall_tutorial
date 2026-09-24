@@ -1,6 +1,9 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
+import tutorialData from '@/data/tutorial.json';
+import { Layer, Step } from '@/types/tutorial';
+import { ChapterStatus } from '@/types/companion';
 
 const PROGRESS_STORAGE_KEY = 'voidfall_tutorial_progress';
 
@@ -33,6 +36,8 @@ function subscribe(callback: () => void) {
 
 export function useTutorialProgress(totalSteps: number = 58) {
   const storeString = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const steps = tutorialData.steps as unknown as Step[];
+  const layers = tutorialData.layers as unknown as Layer[];
 
   let progress: ProgressData = DEFAULT_PROGRESS;
   try {
@@ -76,14 +81,36 @@ export function useTutorialProgress(totalSteps: number = 58) {
     saveProgress(DEFAULT_PROGRESS);
   };
 
+  const currentStep = steps[progress.currentStepIndex || 0] || steps[0];
+  const currentLayer = layers[currentStep.layerIndex] || layers[0];
+  const stepInChapter = (progress.currentStepIndex || 0) - currentLayer.stepStartIndex + 1;
+
+  const getChapterStatus = (layer: Layer): ChapterStatus => {
+    let completedInChapter = 0;
+    for (let i = layer.stepStartIndex; i <= layer.stepEndIndex; i++) {
+      if ((progress.completedSteps || []).includes(i)) {
+        completedInChapter++;
+      }
+    }
+    if (completedInChapter === layer.stepCount) return 'COMPLETED';
+    if (completedInChapter > 0 || ((progress.currentStepIndex || 0) >= layer.stepStartIndex && (progress.currentStepIndex || 0) <= layer.stepEndIndex)) {
+      return 'IN_PROGRESS';
+    }
+    return 'NOT_STARTED';
+  };
+
   return {
     currentStepIndex: progress.currentStepIndex || 0,
     completedSteps: progress.completedSteps || [],
+    currentStep,
+    currentLayer,
+    stepInChapter,
     isLoaded: true,
     goToStep,
     nextStep,
     prevStep,
     resetProgress,
+    getChapterStatus,
     completionPercentage: Math.round(((progress.completedSteps || []).length / totalSteps) * 100),
   };
 }
