@@ -39,11 +39,17 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
 
   return (
     <div className="drawer-overlay" onClick={onClose}>
-      <div className="drawer-container" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="drawer-container"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label="퀵 레퍼런스 및 용어 검색"
+      >
         {/* Drawer Header */}
         <div className="drawer-header">
           <div className="search-bar">
-            <span className="search-icon">🔍</span>
+            <span className="search-icon" aria-hidden="true">🔍</span>
             <input
               type="text"
               className="search-input"
@@ -53,8 +59,19 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
                 setQuery(e.target.value);
                 if (activeTab !== 'search') setActiveTab('search');
               }}
+              aria-label="용어 및 초성 검색"
               autoFocus
             />
+            {query && (
+              <button
+                type="button"
+                className="clear-search-btn"
+                onClick={() => setQuery('')}
+                aria-label="검색어 지우기"
+              >
+                ×
+              </button>
+            )}
             <span className="shortcut-badge">Cmd/Ctrl + K</span>
           </div>
 
@@ -73,7 +90,7 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
             >
               📋 치트시트 & 요약
             </button>
-            <button type="button" className="close-btn" onClick={onClose}>
+            <button type="button" className="close-btn" onClick={onClose} aria-label="닫기">
               ✕
             </button>
           </div>
@@ -193,6 +210,20 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
           outline: none;
           color: var(--text-primary);
           font-size: var(--text-sm);
+        }
+
+        .clear-search-btn {
+          background: transparent;
+          border: none;
+          color: var(--text-muted);
+          font-size: 1.1rem;
+          cursor: pointer;
+          padding: 0 0.25rem;
+          line-height: 1;
+        }
+
+        .clear-search-btn:hover {
+          color: var(--text-primary);
         }
 
         .shortcut-badge {
