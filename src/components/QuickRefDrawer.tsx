@@ -75,9 +75,13 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
             <span className="shortcut-badge">Cmd/Ctrl + K</span>
           </div>
 
-          <div className="nav-tabs">
+          <div className="nav-tabs" role="tablist" aria-label="퀵 레퍼런스 탭">
             <button
               type="button"
+              role="tab"
+              id="tab-search"
+              aria-selected={activeTab === 'search'}
+              aria-controls="panel-search"
               className={`nav-tab ${activeTab === 'search' ? 'active' : ''}`}
               onClick={() => setActiveTab('search')}
             >
@@ -85,6 +89,10 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
             </button>
             <button
               type="button"
+              role="tab"
+              id="tab-cheatsheets"
+              aria-selected={activeTab === 'cheatsheets'}
+              aria-controls="panel-cheatsheets"
               className={`nav-tab ${activeTab === 'cheatsheets' ? 'active' : ''}`}
               onClick={() => setActiveTab('cheatsheets')}
             >
@@ -99,7 +107,12 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
         {/* Drawer Content Body */}
         <div className="drawer-content">
           {activeTab === 'search' && (
-            <div className="search-results-list">
+            <div
+              id="panel-search"
+              role="tabpanel"
+              aria-labelledby="tab-search"
+              className="search-results-list"
+            >
               {query.trim() === '' ? (
                 <div className="search-placeholder">
                   <p className="placeholder-text">💡 검색어를 입력하거나 초성(예: ㅂㅍ, ㄱㅎ태생)을 입력하세요.</p>
@@ -125,9 +138,18 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
                 searchResults.map(({ item, score }) => (
                   <div
                     key={item.key}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`${item.titleKo} 용어 상세보기`}
                     className="result-card"
                     onClick={() => {
                       if (onSelectTerm) onSelectTerm(item.key);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        if (onSelectTerm) onSelectTerm(item.key);
+                      }
                     }}
                   >
                     <div className="card-top">
@@ -142,7 +164,11 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
             </div>
           )}
 
-          {activeTab === 'cheatsheets' && <CheatSheetView />}
+          {activeTab === 'cheatsheets' && (
+            <div id="panel-cheatsheets" role="tabpanel" aria-labelledby="tab-cheatsheets">
+              <CheatSheetView />
+            </div>
+          )}
         </div>
       </div>
 
@@ -338,6 +364,15 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
           background: var(--bg-surface);
           border-color: var(--accent-border);
           transform: translateY(-1px);
+        }
+
+        .nav-tab:focus-visible,
+        .search-input:focus-visible,
+        .close-btn:focus-visible,
+        .quick-tag:focus-visible,
+        .result-card:focus-visible {
+          outline: 2px solid var(--color-accent);
+          outline-offset: 2px;
         }
 
         .card-top {
