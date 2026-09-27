@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { GlossaryTerm } from '@/types/tutorial';
 
 interface GlossaryModalProps {
@@ -28,6 +28,17 @@ export function GlossaryModal({
       setOpenTermKey(activeTermKey);
     }
   }
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   const termsList = useMemo(() => {
     return Object.values(glossary);

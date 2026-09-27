@@ -46,6 +46,7 @@ export function StepNavigation({
         onClick={onPrev}
         disabled={isFirst}
         title="이전 단계 (단축키: ←)"
+        aria-label="이전 단계"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
@@ -62,6 +63,7 @@ export function StepNavigation({
         className="nav-btn nav-btn-primary"
         onClick={onNext}
         title={isLast ? '학습 완료' : '다음 단계 (단축키: →)'}
+        aria-label={isLast ? '학습 완료' : '다음 단계'}
       >
         <span>{isLast ? '완료' : '다음'}</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -110,6 +112,11 @@ export function StepNavigation({
           user-select: none;
           white-space: nowrap;
           flex-shrink: 0;
+        }
+
+        .nav-btn:focus-visible {
+          outline: 2px solid var(--color-accent);
+          outline-offset: 2px;
         }
 
         .nav-btn:active {
