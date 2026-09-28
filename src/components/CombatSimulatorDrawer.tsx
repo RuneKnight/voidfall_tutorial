@@ -78,7 +78,7 @@ export function CombatSimulatorDrawer({ isOpen, onClose }: CombatSimulatorDrawer
               <span className="drawer-subtitle">주사위 없는 100% 수식 기반 보이드폴 전투 연산기</span>
             </div>
           </div>
-          <button type="button" className="close-btn" onClick={onClose}>
+          <button type="button" className="close-btn" onClick={onClose} aria-label="닫기">
             ✕
           </button>
         </div>
@@ -95,45 +95,110 @@ export function CombatSimulatorDrawer({ isOpen, onClose }: CombatSimulatorDrawer
                 <div className="stepper-row">
                   <span>초계함 (Corvette)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => updateUnit('invader', 'corvette', -1)}>-</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 초계함 수 감소"
+                      disabled={invaderFleet.corvette === 0}
+                      onClick={() => updateUnit('invader', 'corvette', -1)}
+                    >
+                      -
+                    </button>
                     <span>{invaderFleet.corvette}</span>
-                    <button type="button" onClick={() => updateUnit('invader', 'corvette', 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 초계함 수 증가"
+                      onClick={() => updateUnit('invader', 'corvette', 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
 
                 <div className="stepper-row">
                   <span>구축함 (Destroyer)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => updateUnit('invader', 'destroyer', -1)}>-</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 구축함 수 감소"
+                      disabled={invaderFleet.destroyer === 0}
+                      onClick={() => updateUnit('invader', 'destroyer', -1)}
+                    >
+                      -
+                    </button>
                     <span>{invaderFleet.destroyer}</span>
-                    <button type="button" onClick={() => updateUnit('invader', 'destroyer', 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 구축함 수 증가"
+                      onClick={() => updateUnit('invader', 'destroyer', 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
 
                 <div className="stepper-row">
                   <span>드레드노트 (Dreadnought)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => updateUnit('invader', 'dreadnought', -1)}>-</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 드레드노트 수 감소"
+                      disabled={invaderFleet.dreadnought === 0}
+                      onClick={() => updateUnit('invader', 'dreadnought', -1)}
+                    >
+                      -
+                    </button>
                     <span>{invaderFleet.dreadnought}</span>
-                    <button type="button" onClick={() => updateUnit('invader', 'dreadnought', 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 드레드노트 수 증가"
+                      onClick={() => updateUnit('invader', 'dreadnought', 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
 
                 <div className="stepper-row">
                   <span>순양함 (Carrier)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => updateUnit('invader', 'carrier', -1)}>-</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 순양함 수 감소"
+                      disabled={invaderFleet.carrier === 0}
+                      onClick={() => updateUnit('invader', 'carrier', -1)}
+                    >
+                      -
+                    </button>
                     <span>{invaderFleet.carrier}</span>
-                    <button type="button" onClick={() => updateUnit('invader', 'carrier', 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 순양함 수 증가"
+                      onClick={() => updateUnit('invader', 'carrier', 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
 
                 <div className="stepper-row">
                   <span>기술 피해 흡수 (Absorption)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => setInvaderAbsorption((v) => Math.max(0, v - 1))}>-</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 기술 피해 흡수 감소"
+                      disabled={invaderAbsorption === 0}
+                      onClick={() => setInvaderAbsorption((v) => Math.max(0, v - 1))}
+                    >
+                      -
+                    </button>
                     <span>{invaderAbsorption}</span>
-                    <button type="button" onClick={() => setInvaderAbsorption((v) => v + 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="침략자 기술 피해 흡수 증가"
+                      onClick={() => setInvaderAbsorption((v) => v + 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
               </div>
@@ -147,36 +212,88 @@ export function CombatSimulatorDrawer({ isOpen, onClose }: CombatSimulatorDrawer
                 <div className="stepper-row">
                   <span>초계함 (Corvette)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => updateUnit('defender', 'corvette', -1)}>-</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 초계함 수 감소"
+                      disabled={defenderFleet.corvette === 0}
+                      onClick={() => updateUnit('defender', 'corvette', -1)}
+                    >
+                      -
+                    </button>
                     <span>{defenderFleet.corvette}</span>
-                    <button type="button" onClick={() => updateUnit('defender', 'corvette', 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 초계함 수 증가"
+                      onClick={() => updateUnit('defender', 'corvette', 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
 
                 <div className="stepper-row">
                   <span>구축함 (Destroyer)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => updateUnit('defender', 'destroyer', -1)}>-</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 구축함 수 감소"
+                      disabled={defenderFleet.destroyer === 0}
+                      onClick={() => updateUnit('defender', 'destroyer', -1)}
+                    >
+                      -
+                    </button>
                     <span>{defenderFleet.destroyer}</span>
-                    <button type="button" onClick={() => updateUnit('defender', 'destroyer', 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 구축함 수 증가"
+                      onClick={() => updateUnit('defender', 'destroyer', 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
 
                 <div className="stepper-row">
                   <span>드레드노트 (Dreadnought)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => updateUnit('defender', 'dreadnought', -1)}>-</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 드레드노트 수 감소"
+                      disabled={defenderFleet.dreadnought === 0}
+                      onClick={() => updateUnit('defender', 'dreadnought', -1)}
+                    >
+                      -
+                    </button>
                     <span>{defenderFleet.dreadnought}</span>
-                    <button type="button" onClick={() => updateUnit('defender', 'dreadnought', 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 드레드노트 수 증가"
+                      onClick={() => updateUnit('defender', 'dreadnought', 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
 
                 <div className="stepper-row">
                   <span>섹터 방어 시설 (Defense)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => setSectorDefense((v) => Math.max(0, v - 1))}>-</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 섹터 방어 시설 수 감소"
+                      disabled={sectorDefense === 0}
+                      onClick={() => setSectorDefense((v) => Math.max(0, v - 1))}
+                    >
+                      -
+                    </button>
                     <span>{sectorDefense}</span>
-                    <button type="button" onClick={() => setSectorDefense((v) => v + 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 섹터 방어 시설 수 증가"
+                      onClick={() => setSectorDefense((v) => v + 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
 
@@ -184,6 +301,8 @@ export function CombatSimulatorDrawer({ isOpen, onClose }: CombatSimulatorDrawer
                   <span>성간 기지 (Starbase)</span>
                   <button
                     type="button"
+                    aria-label="방어자 성간 기지 배치 여부 토글"
+                    aria-pressed={starbase}
                     className={`toggle-pill ${starbase ? 'active' : ''}`}
                     onClick={() => setStarbase((v) => !v)}
                   >
@@ -194,9 +313,22 @@ export function CombatSimulatorDrawer({ isOpen, onClose }: CombatSimulatorDrawer
                 <div className="stepper-row">
                   <span>기술 피해 흡수 (Absorption)</span>
                   <div className="counter">
-                    <button type="button" onClick={() => setDefenderAbsorption((v) => Math.max(0, v - 1))}>-</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 기술 피해 흡수 감소"
+                      disabled={defenderAbsorption === 0}
+                      onClick={() => setDefenderAbsorption((v) => Math.max(0, v - 1))}
+                    >
+                      -
+                    </button>
                     <span>{defenderAbsorption}</span>
-                    <button type="button" onClick={() => setDefenderAbsorption((v) => v + 1)}>+</button>
+                    <button
+                      type="button"
+                      aria-label="방어자 기술 피해 흡수 증가"
+                      onClick={() => setDefenderAbsorption((v) => v + 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
               </div>
@@ -350,6 +482,12 @@ export function CombatSimulatorDrawer({ isOpen, onClose }: CombatSimulatorDrawer
           font-weight: 700;
           cursor: pointer;
           width: 18px;
+        }
+
+        .counter button:disabled {
+          opacity: 0.35;
+          cursor: not-allowed;
+          color: var(--text-muted);
         }
 
         .toggle-pill {
