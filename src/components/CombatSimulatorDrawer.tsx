@@ -78,7 +78,7 @@ export function CombatSimulatorDrawer({ isOpen, onClose }: CombatSimulatorDrawer
               <span className="drawer-subtitle">주사위 없는 100% 수식 기반 보이드폴 전투 연산기</span>
             </div>
           </div>
-          <button type="button" className="close-btn" onClick={onClose}>
+          <button type="button" className="close-btn" onClick={onClose} aria-label="닫기">
             ✕
           </button>
         </div>
