@@ -35,7 +35,7 @@ export function Header({
   return (
     <header className="player-header">
       <div className="header-left">
-        <Link href="/" className="header-btn" title="메인 화면으로">
+        <Link href="/" className="header-btn" title="메인 화면으로" aria-label="메인 화면으로">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -107,6 +107,7 @@ export function Header({
             className={`header-btn wakelock-btn ${wakeLockActive ? 'active' : ''}`}
             title={wakeLockActive ? '화면 켜짐 유지 중' : '테이블탑 화면 켜짐 유지 토글'}
             aria-label="화면 켜짐 유지 토글"
+            aria-pressed={!!wakeLockActive}
           >
             💡
           </button>
@@ -131,7 +132,7 @@ export function Header({
           onClick={onToggleTheme}
           className="header-btn theme-toggle-btn"
           title={theme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'}
-          aria-label="테마 전환"
+          aria-label={theme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'}
         >
           {theme === 'dark' ? (
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
