@@ -196,6 +196,12 @@ export function Header({
           transform: translateY(-1px);
         }
 
+        .header-btn:focus-visible {
+          outline: 2px solid var(--color-accent);
+          outline-offset: 2px;
+          border-color: var(--accent-border-strong);
+        }
+
         .wakelock-btn.active {
           background: var(--accent-bg);
           border-color: var(--accent-border);

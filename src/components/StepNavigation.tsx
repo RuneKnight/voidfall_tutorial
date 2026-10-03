@@ -116,6 +116,12 @@ export function StepNavigation({
           transform: scale(0.97);
         }
 
+        .nav-btn:focus-visible {
+          outline: 2px solid var(--color-accent);
+          outline-offset: 2px;
+          box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
         .nav-btn:disabled {
           opacity: 0.35;
           cursor: not-allowed;

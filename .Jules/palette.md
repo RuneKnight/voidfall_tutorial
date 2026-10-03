@@ -1,0 +1,3 @@
+## 2026-10-03 - Focus Visible Indicators for Custom Button Controls
+**Learning:** Icon-only navigation and header action buttons using custom background styles can obscure browser default focus rings during keyboard navigation. Custom `:focus-visible` styles using theme accent CSS variables (`--color-accent`, `--accent-border-strong`, `--accent-glow`) ensure high-contrast, accessible focus indicators while maintaining the aesthetic design.
+**Action:** When creating styled custom buttons, always explicitly define `:focus-visible` styles that harmonize with the component borders and active state tokens.
