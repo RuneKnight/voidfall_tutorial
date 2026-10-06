@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import glossaryData from '@/data/glossary.json';
 import { GlossaryTerm } from '@/types/tutorial';
 import { fuzzySearchItems } from '@/lib/fuzzySearch';
@@ -34,6 +34,17 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
     if (!query.trim()) return [];
     return fuzzySearchItems(glossaryTermsList, query);
   }, [glossaryTermsList, query]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -199,6 +210,11 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
           padding: 0.65rem 1rem;
         }
 
+        .search-bar:focus-within {
+          border-color: var(--color-accent);
+          box-shadow: 0 0 0 2px var(--accent-glow);
+        }
+
         .search-icon {
           font-size: var(--text-md);
         }
@@ -252,6 +268,15 @@ export function QuickRefDrawer({ isOpen, onClose, onSelectTerm }: QuickRefDrawer
           border: none;
           cursor: pointer;
           transition: all var(--transition-fast);
+        }
+
+        .nav-tab:focus-visible,
+        .close-btn:focus-visible,
+        .clear-search-btn:focus-visible,
+        .quick-tag:focus-visible,
+        .result-card:focus-visible {
+          outline: 2px solid var(--color-accent);
+          outline-offset: 2px;
         }
 
         .nav-tab.active {
